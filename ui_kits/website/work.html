@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CRTR. — Work</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,900&family=Archivo+Black&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --red:#E5232C; --red-deep:#B81820; --red-darker:#7A0A10; --red-soft:#FFE7E8;
+  --ink:#0B0B0C; --ink-2:#1A1A1C; --ink-3:#2A2A2D;
+  --paper:#F4F1EC; --paper-2:#EAE6DF; --paper-3:#E8E4DA; --white:#FFFFFF;
+  --gold:#F2C94C; --steel:#0F2438;
+  --muted:#6B6A68; --muted-2:#A3A2A0;
+  --bg:var(--paper); --border:var(--ink); --border-soft:rgba(11,11,12,.12); --accent:var(--red);
+  --text-1:var(--ink); --text-2:var(--ink-2); --text-3:var(--muted);
+  --font-display:'Archivo Black','Archivo',system-ui,sans-serif;
+  --font-sans:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
+  --fs-display:clamp(56px,9vw,148px); --fs-h1:clamp(40px,6vw,84px);
+  --fs-h2:clamp(32px,4.5vw,56px); --fs-h3:32px; --fs-h4:22px;
+  --fs-h5:18px; --fs-h6:15px; --fs-lead:20px; --fs-body:16px;
+  --fs-body-sm:15px; --fs-sm:14px; --fs-xs:12px; --fs-2xs:11px;
+  --fw-regular:400; --fw-medium:500; --fw-semibold:600; --fw-bold:700; --fw-x:800; --fw-black:900;
+  --lh-tight:0.95; --lh-snug:1.2; --lh-body:1.55;
+  --ls-display:-0.03em; --ls-heading:-0.02em; --ls-eyebrow:0.08em; --ls-eyebrow-w:0.1em;
+  --r-xs:6px; --r-sm:8px; --r-md:12px; --r-lg:18px; --r-xl:24px; --r-pill:999px;
+  --bw-hair:1px; --bw:1.5px; --bw-bold:2px;
+  --container:1320px; --gutter:32px; --gutter-sm:20px; --nav-h:72px;
+  --shadow-hard-sm:3px 3px 0 var(--ink); --shadow-hard:4px 4px 0 var(--ink);
+  --shadow-hard-lg:6px 6px 0 var(--ink); --shadow-hard-xl:8px 8px 0 var(--ink);
+  --shadow-hard-inv:4px 4px 0 var(--paper); --shadow-hard-inv-sm:2px 2px 0 var(--paper);
+  --ring:0 0 0 3px rgba(229,35,44,.30);
+  --dur-fast:180ms; --dur-base:250ms; --dur-slow:400ms;
+  --ease-ui:cubic-bezier(0.4,0,0.2,1); --ease-out:cubic-bezier(0.22,1,0.36,1);
+  --ease-snap:cubic-bezier(0.2,0.9,0.3,1.2);
+  --lift:translate(-2px,-2px); --lift-lg:translate(-3px,-3px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-sans);font-size:var(--fs-body);line-height:var(--lh-body);color:var(--text-1);background:var(--bg);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+h1,h2,h3,h4,h5,h6{margin:0;font-family:var(--font-display);font-weight:var(--fw-black);text-transform:uppercase;line-height:var(--lh-tight);letter-spacing:var(--ls-display);color:var(--text-1)}
+p{margin:0;color:var(--text-2);line-height:var(--lh-body)}
+.kit-wrap{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+@media(max-width:640px){.kit-wrap{padding:0 var(--gutter-sm)}}
+.kit-section{padding:120px 0;border-bottom:1.5px solid var(--ink)}
+@media(max-width:780px){.kit-section{padding:80px 0}}
+.kit-tag{font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--red)}
+.kit-tag::before{content:'/ ';color:var(--ink);opacity:.4}
+.section-head{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:end;margin-bottom:64px}
+@media(max-width:780px){.section-head{grid-template-columns:1fr;gap:24px}}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:780px){.svc-grid{grid-template-columns:1fr}}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--ink-3);border-bottom:1px solid var(--ink-3)}
+.step{padding:36px 28px;border-right:1px solid var(--ink-3)}
+.step:last-child{border-right:none}
+@media(max-width:880px){.steps-grid{grid-template-columns:1fr 1fr}.step:nth-child(2){border-right:none}.step:nth-child(-n+2){border-bottom:1px solid var(--ink-3)}}
+@media(max-width:540px){.steps-grid{grid-template-columns:1fr}.step{border-right:none;border-bottom:1px solid var(--ink-3)}}
+.cta{padding:140px 0;background:var(--red);color:#fff;border-bottom:1.5px solid var(--ink);position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 28px,rgba(0,0,0,.06) 28px 29px);pointer-events:none}
+.cta-inner{position:relative;text-align:center;max-width:980px;margin:0 auto;padding:0 32px}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:48px;margin-bottom:48px}
+@media(max-width:880px){.foot-grid{grid-template-columns:1fr 1fr;gap:36px}}
+@media(max-width:540px){.foot-grid{grid-template-columns:1fr}}
+/* ── page hero ── */
+.page-hero{padding:72px 0 64px;border-bottom:1.5px solid var(--ink);position:relative;overflow:hidden}
+.page-hero.on-ink{background:var(--ink)}
+.page-hero h1{font-family:var(--font-display);font-size:clamp(48px,8vw,116px);line-height:.92;letter-spacing:-0.045em;text-transform:uppercase;margin:18px 0 0}
+.page-hero .lede{font-size:20px;line-height:1.5;color:var(--ink-2);max-width:620px;margin:24px 0 0;font-weight:500}
+.page-hero.on-ink h1{color:var(--paper)}
+.page-hero.on-ink .lede{color:var(--muted-2)}
+/* ── work ── */
+.work-index{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media(max-width:780px){.work-index{grid-template-columns:1fr}}
+/* ── about ── */
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);border:1.5px solid var(--ink);border-radius:18px;overflow:hidden}
+.stat{padding:32px;border-right:1px solid var(--ink)}
+.stat:last-child{border-right:none}
+@media(max-width:680px){.stat-row{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:none}.stat:nth-child(-n+2){border-bottom:1px solid var(--ink)}}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media(max-width:880px){.team-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.team-grid{grid-template-columns:1fr}}
+.logo-strip{display:grid;grid-template-columns:repeat(5,1fr);border:1.5px solid var(--ink);border-radius:18px;overflow:hidden}
+.logo-cell{padding:28px;display:grid;place-items:center;border-right:1px solid var(--ink);font-family:var(--font-display);text-transform:uppercase;letter-spacing:-0.02em;font-size:20px;color:var(--ink)}
+.logo-cell:last-child{border-right:none}
+@media(max-width:780px){.logo-strip{grid-template-columns:repeat(2,1fr)}.logo-cell{border-bottom:1px solid var(--ink)}}
+/* ── contact ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+@media(max-width:880px){.contact-grid{grid-template-columns:1fr;gap:36px}}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:480px){.form-row{grid-template-columns:1fr}}
+.faq{border-top:1px solid var(--ink)}
+.faq-item{border-bottom:1px solid var(--ink);padding:24px 0}
+.faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer}
+.faq-q h4{font-family:var(--font-display);font-size:20px;text-transform:uppercase;letter-spacing:-0.01em;margin:0}
+.faq-a{color:var(--muted);font-size:15px;line-height:1.6;max-width:70ch;overflow:hidden;max-height:0;transition:max-height .35s var(--ease-out),margin .35s var(--ease-out)}
+.faq-item.open .faq-a{max-height:200px;margin-top:14px}
+.faq-item.open .faq-plus{transform:rotate(45deg)}
+.faq-plus{font-family:var(--font-mono);font-size:22px;color:var(--red);transition:transform .3s var(--ease-out);flex:none}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel">
+const { useState, useEffect } = React;
+const LOGO = './crtr-logo.jpg';
+
+function Tag({ children, style, ...rest }) {
+  return <span style={{ display:'inline-flex',alignItems:'center',fontFamily:'var(--font-mono)',fontSize:'var(--fs-2xs)',letterSpacing:'0.06em',textTransform:'uppercase',padding:'5px 10px',border:'1px solid currentColor',borderRadius:'var(--r-pill)',opacity:0.85,...style }} {...rest}>{children}</span>;
+}
+function Badge({ children, tone='paper', dot=false, style, ...rest }) {
+  const tones = { paper:{background:'var(--paper-2)',color:'var(--ink)',border:'var(--bw) solid var(--ink)'}, ink:{background:'var(--ink)',color:'var(--paper)',border:'var(--bw) solid var(--ink)'}, red:{background:'var(--red)',color:'var(--white)',border:'var(--bw) solid var(--ink)'} };
+  const dots = { paper:'var(--red)', ink:'#22c55e', red:'var(--white)' };
+  return <span style={{ display:'inline-flex',alignItems:'center',gap:'8px',fontFamily:'var(--font-mono)',fontSize:'var(--fs-xs)',textTransform:'uppercase',letterSpacing:'var(--ls-eyebrow)',fontWeight:'var(--fw-medium)',padding:'6px 12px',borderRadius:'var(--r-pill)',...tones[tone],...style }} {...rest}>{dot&&<span style={{ width:6,height:6,borderRadius:'50%',background:dots[tone] }}/>}{children}</span>;
+}
+function Button({ children, variant='primary', size='md', iconRight=true, disabled=false, href, onClick, style, ...rest }) {
+  const [h,setH]=useState(false); const [p,setP]=useState(false);
+  const sizes = { sm:{padding:'10px 16px',fontSize:'var(--fs-sm)'}, md:{padding:'14px 22px',fontSize:'var(--fs-body-sm)'}, lg:{padding:'18px 30px',fontSize:'var(--fs-body)'} };
+  const base = { fontFamily:'var(--font-sans)',fontWeight:'var(--fw-semibold)',display:'inline-flex',alignItems:'center',gap:'10px',borderRadius:'var(--r-pill)',border:'var(--bw) solid var(--ink)',cursor:disabled?'not-allowed':'pointer',opacity:disabled?0.45:1,textDecoration:'none',transition:'transform var(--dur-fast) var(--ease-snap),box-shadow var(--dur-fast) var(--ease-ui),background var(--dur-fast) var(--ease-ui),color var(--dur-fast) var(--ease-ui)',...sizes[size] };
+  const variants = { primary:{background:'var(--red)',color:'var(--white)',boxShadow:h&&!disabled?'var(--shadow-hard-lg)':'var(--shadow-hard)'}, dark:{background:'var(--ink)',color:'var(--white)',boxShadow:h&&!disabled?'var(--shadow-hard-lg)':'var(--shadow-hard)'}, ghost:{background:h&&!disabled?'var(--ink)':'transparent',color:h&&!disabled?'var(--paper)':'var(--ink)',boxShadow:'none'} };
+  const lift = !disabled&&h?{transform:p?'translate(0,0)':'var(--lift)'}:{};
+  const arrow = <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" style={{ transition:'transform var(--dur-base) var(--ease-out)',transform:h?'translateX(3px)':'none' }}><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>;
+  const El = href?'a':'button';
+  return <El href={href} onClick={disabled?undefined:onClick} onMouseEnter={()=>setH(true)} onMouseLeave={()=>{setH(false);setP(false)}} onMouseDown={()=>setP(true)} onMouseUp={()=>setP(false)} style={{ ...base,...variants[variant],...lift,...style }} {...rest}>{children}{iconRight&&variant!=='ghost'&&arrow}</El>;
+}
+function IconButton({ children, variant='outline', shape='circle', size=46, disabled=false, href, onClick, style, ...rest }) {
+  const [h,setH]=useState(false);
+  const base = { width:size,height:size,display:'inline-grid',placeItems:'center',borderRadius:shape==='circle'?'50%':'var(--r-sm)',border:'var(--bw) solid var(--ink)',cursor:disabled?'not-allowed':'pointer',opacity:disabled?0.45:1,transition:'transform var(--dur-fast) var(--ease-snap),background var(--dur-fast) var(--ease-ui),color var(--dur-fast) var(--ease-ui),box-shadow var(--dur-fast) var(--ease-ui)' };
+  const variants = { outline:{background:h&&!disabled?'var(--red)':'var(--paper-2)',color:h&&!disabled?'var(--white)':'var(--ink)',borderColor:h&&!disabled?'var(--red)':'var(--ink)'}, solid:{background:'var(--ink)',color:'var(--paper)',boxShadow:h&&!disabled?'var(--shadow-hard-sm)':'none',transform:h&&!disabled?'var(--lift)':'none'} };
+  const El = href?'a':'button';
+  return <El href={href} onClick={disabled?undefined:onClick} onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)} style={{ ...base,...variants[variant],...style }} {...rest}>{children}</El>;
+}
+function Card({ children, interactive=true, padding=24, style, ...rest }) {
+  const [h,setH]=useState(false);
+  return <div onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)} style={{ border:'var(--bw) solid var(--ink)',borderRadius:'var(--r-lg)',padding,background:'var(--paper)',color:'var(--ink)',transition:'transform var(--dur-base) var(--ease-out),box-shadow var(--dur-base) var(--ease-out)',boxShadow:interactive&&h?'var(--shadow-hard-lg)':'none',transform:interactive&&h?'var(--lift)':'none',...style }} {...rest}>{children}</div>;
+}
+function ServiceTile({ num='01', title, children, tags=[], style, ...rest }) {
+  const [h,setH]=useState(false);
+  return (
+    <div onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)}
+      style={{ display:'grid',gridTemplateColumns:'48px 1fr auto',gap:'20px',alignItems:'start',padding:'36px',background:h?'var(--ink)':'var(--paper)',color:h?'var(--paper)':'var(--ink)',border:'var(--bw) solid var(--ink)',borderRadius:'var(--r-lg)',transition:'background var(--dur-slow) var(--ease-ui),color var(--dur-slow) var(--ease-ui)',...style }} {...rest}>
+      <div style={{ fontFamily:'var(--font-mono)',fontSize:'var(--fs-sm)',color:h?'var(--red)':'var(--muted)',paddingTop:6 }}>/ {num}</div>
+      <div>
+        <h3 style={{ fontFamily:'var(--font-display)',fontSize:'var(--fs-h3)',lineHeight:1,letterSpacing:'var(--ls-display)',textTransform:'uppercase',margin:'0 0 12px' }}>{title}</h3>
+        <p style={{ color:'inherit',opacity:0.78,fontSize:'var(--fs-body-sm)',margin:'0 0 18px',maxWidth:'38ch' }}>{children}</p>
+        {tags.length>0&&<div style={{ display:'flex',flexWrap:'wrap',gap:'8px' }}>{tags.map(t=><Tag key={t}>{t}</Tag>)}</div>}
+      </div>
+      <div style={{ width:46,height:46,borderRadius:'50%',display:'grid',placeItems:'center',background:h?'var(--red)':'var(--paper-2)',color:h?'var(--white)':'var(--ink)',border:`1px solid ${h?'var(--red)':'var(--ink)'}`,transform:h?'rotate(-45deg)':'none',transition:'all var(--dur-slow) var(--ease-out)' }}>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M6 4h6v6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+      </div>
+    </div>
+  );
+}
+function BrandMark({ logoSrc, size=38, showWord=true, word='CRTR.', onInk=false, style, ...rest }) {
+  const [err,setErr]=useState(false);
+  return <span style={{ display:'inline-flex',alignItems:'center',gap:'12px',...style }} {...rest}><span style={{ width:size,height:size,borderRadius:'var(--r-sm)',background:'var(--red)',display:'grid',placeItems:'center',color:'#fff',fontFamily:'var(--font-display)',fontSize:size*0.37,border:'var(--bw) solid var(--ink)',boxShadow:onInk?'var(--shadow-hard-inv-sm)':'var(--shadow-hard-sm)',overflow:'hidden' }}>{logoSrc&&!err?<img src={logoSrc} alt="" onError={()=>setErr(true)} style={{ width:'100%',height:'100%',objectFit:'cover' }}/>:<span style={{ transform:'translateY(-1px)' }}>C.</span>}</span>{showWord&&<span style={{ fontFamily:'var(--font-display)',fontSize:size*0.53,letterSpacing:'-0.02em',color:onInk?'var(--paper)':'var(--ink)' }}>{word}</span>}</span>;
+}
+function NavLink({ href, children }) {
+  const [h,setH]=useState(false);
+  return <a href={href} onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)} style={{ fontSize:'var(--fs-sm)',fontWeight:'var(--fw-medium)',color:h?'var(--red)':'inherit',transition:'color var(--dur-fast) var(--ease-ui)' }}>{children}</a>;
+}
+function NavBar({ logoSrc, links=[], cta='Booking — Q3', ctaHref='#', style, ...rest }) {
+  return <header style={{ position:'sticky',top:0,zIndex:50,background:'var(--paper)',borderBottom:'var(--bw) solid var(--ink)',...style }} {...rest}><div style={{ maxWidth:'var(--container)',margin:'0 auto',padding:'0 var(--gutter)',height:'var(--nav-h)',display:'flex',alignItems:'center',justifyContent:'space-between' }}><a href="index.html" aria-label="CRTR."><BrandMark logoSrc={logoSrc} size={38}/></a><nav style={{ display:'flex',gap:'36px',alignItems:'center' }}>{links.map(l=><NavLink key={l.label} href={l.href}>{l.label}</NavLink>)}</nav><a href={ctaHref}><Badge tone="ink" dot>{cta}</Badge></a></div></header>;
+}
+function WorkCard({ meta, title, tone='ink', href='#', style, ...rest }) {
+  const [h,setH]=useState(false);
+  const tones = { ink:{background:'var(--ink)',color:'#fff'}, red:{background:'var(--red)',color:'#fff'}, redGrad:{background:'linear-gradient(135deg,var(--red) 0%,var(--red-darker) 100%)',color:'#fff'}, darkGrad:{background:'linear-gradient(135deg,#0B0B0C 0%,#2a2a2d 100%)',color:'#fff'}, steel:{background:'var(--steel)',color:'#fff'}, gold:{background:'var(--gold)',color:'var(--ink)'}, paper:{background:'var(--paper-3)',color:'var(--ink)'} };
+  return <a href={href} onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)} style={{ position:'relative',display:'flex',flexDirection:'column',justifyContent:'flex-end',minHeight:200,border:'var(--bw) solid var(--ink)',borderRadius:'var(--r-lg)',overflow:'hidden',padding:22,transition:'transform var(--dur-slow) var(--ease-out),box-shadow var(--dur-slow) var(--ease-out)',boxShadow:h?'var(--shadow-hard-lg)':'none',transform:h?'var(--lift-lg)':'none',...tones[tone],...style }} {...rest}><div style={{ fontFamily:'var(--font-mono)',fontSize:'var(--fs-2xs)',textTransform:'uppercase',letterSpacing:'0.08em',opacity:0.85 }}>{meta}</div><div style={{ fontFamily:'var(--font-display)',fontSize:'22px',letterSpacing:'-0.02em',textTransform:'uppercase',marginTop:4,lineHeight:1 }}>{title}</div></a>;
+}
+function Input({ label, hint, error, type='text', id, style, ...rest }) {
+  const [f,setF]=useState(false);
+  const uid=id||(label?label.toLowerCase().replace(/\s+/g,'-'):undefined);
+  return <div style={{ display:'flex',flexDirection:'column',gap:'8px',width:'100%' }}>{label&&<label htmlFor={uid} style={{ fontFamily:'var(--font-mono)',fontSize:'var(--fs-2xs)',textTransform:'uppercase',letterSpacing:'var(--ls-eyebrow)',color:'var(--muted)' }}>{label}</label>}<input id={uid} type={type} onFocus={()=>setF(true)} onBlur={()=>setF(false)} style={{ fontFamily:'var(--font-sans)',fontSize:'var(--fs-body-sm)',color:'var(--ink)',background:'var(--white)',border:`var(--bw) solid ${error?'var(--red)':'var(--ink)'}`,borderRadius:'var(--r-sm)',padding:'12px 14px',outline:'none',boxShadow:f?'var(--ring)':'none',transition:'box-shadow var(--dur-fast) var(--ease-ui)',width:'100%',...style }} {...rest}/>{(hint||error)&&<span style={{ fontSize:'var(--fs-2xs)',fontFamily:'var(--font-mono)',color:error?'var(--red)':'var(--muted)' }}>{error||hint}</span>}</div>;
+}
+function Textarea({ label, hint, error, rows=4, id, style, ...rest }) {
+  const [f,setF]=useState(false);
+  const uid=id||(label?label.toLowerCase().replace(/\s+/g,'-'):undefined);
+  return <div style={{ display:'flex',flexDirection:'column',gap:'8px',width:'100%' }}>{label&&<label htmlFor={uid} style={{ fontFamily:'var(--font-mono)',fontSize:'var(--fs-2xs)',textTransform:'uppercase',letterSpacing:'var(--ls-eyebrow)',color:'var(--muted)' }}>{label}</label>}<textarea id={uid} rows={rows} onFocus={()=>setF(true)} onBlur={()=>setF(false)} style={{ fontFamily:'var(--font-sans)',fontSize:'var(--fs-body-sm)',lineHeight:'var(--lh-body)',color:'var(--ink)',background:'var(--white)',border:'var(--bw) solid var(--ink)',borderRadius:'var(--r-sm)',padding:'12px 14px',outline:'none',resize:'vertical',boxShadow:f?'var(--ring)':'none',transition:'box-shadow var(--dur-fast) var(--ease-ui)',width:'100%',...style }} {...rest}/>{(hint||error)&&<span style={{ fontSize:'var(--fs-2xs)',fontFamily:'var(--font-mono)',color:error?'var(--red)':'var(--muted)' }}>{error||hint}</span>}</div>;
+}
+
+/* ─── CHROME ─── */
+const NAV_LINKS = [
+  { label:'Work',     href:'work.html' },
+  { label:'Services', href:'services.html' },
+  { label:'Studio',   href:'about.html' },
+  { label:'Contact',  href:'contact.html' },
+];
+function SiteNav() { return <NavBar logoSrc={LOGO} links={NAV_LINKS} cta="Booking — Q3" ctaHref="contact.html"/>; }
+function SectionHead({ tag, title, lede, onInk }) {
+  return <div className="section-head"><div><span className="kit-tag">{tag}</span><h2 style={{ fontFamily:'var(--font-display)',fontSize:'clamp(40px,6vw,80px)',lineHeight:.95,letterSpacing:'-0.04em',textTransform:'uppercase',margin:'14px 0 0',color:onInk?'var(--paper)':'var(--ink)' }}>{title}</h2></div><p style={{ fontSize:18,color:onInk?'var(--muted-2)':'var(--muted)',maxWidth:480,lineHeight:1.55 }}>{lede}</p></div>;
+}
+function Stroke({ children, ink=true }) {
+  return <span style={{ WebkitTextStroke:`1.5px var(--${ink?'ink':'paper'})`,color:'transparent' }}>{children}</span>;
+}
+function Footer() {
+  const cols = [
+    ['Studio',[['Work','work.html'],['Services','services.html'],['About','about.html'],['Contact','contact.html']]],
+    ['Company',[['About','about.html'],['Careers','#'],['Press kit','#'],['Contact','contact.html']]],
+    ['Get in touch',[['hello@crtr.studio','mailto:hello@crtr.studio'],['+1 (415) 555-0148','#'],['Lisbon · NYC · Remote','#']]],
+  ];
+  return (
+    <footer style={{ background:'var(--ink)',color:'var(--paper)',padding:'64px 0 32px' }}>
+      <div className="kit-wrap">
+        <div className="foot-grid">
+          <div>
+            <a href="index.html" style={{ display:'inline-block',marginBottom:16 }}><BrandMark logoSrc={LOGO} onInk size={40}/></a>
+            <p style={{ color:'var(--muted-2)',fontSize:14,lineHeight:1.6,maxWidth:300,marginBottom:20 }}>A four-person creator studio working on video, motion, web and graphic design for ambitious teams worldwide.</p>
+            <div style={{ display:'flex',gap:10 }}>{['IG','X','YT','VM'].map(s=><IconButton key={s} size={36} aria-label={s} style={{ background:'transparent',color:'var(--paper)',borderColor:'var(--ink-3)',fontSize:11,fontFamily:'var(--font-mono)' }}>{s}</IconButton>)}</div>
+          </div>
+          {cols.map(([h,links])=>(
+            <div key={h}>
+              <h4 style={{ fontFamily:'var(--font-mono)',fontSize:11,textTransform:'uppercase',letterSpacing:'.1em',color:'var(--red)',margin:'0 0 16px' }}>{h}</h4>
+              <ul style={{ listStyle:'none',padding:0,margin:0,display:'flex',flexDirection:'column',gap:10 }}>
+                {links.map(([l,href])=><li key={l}><a href={href} style={{ fontSize:14,color:'var(--paper)' }}>{l}</a></li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <div style={{ borderTop:'1px solid var(--ink-3)',paddingTop:24,display:'flex',justifyContent:'space-between',flexWrap:'wrap',gap:16,fontFamily:'var(--font-mono)',fontSize:12,color:'var(--muted)',textTransform:'uppercase',letterSpacing:'.06em' }}>
+          <span>© 2026 CRTR. Creator Studio. All rights reserved.</span>
+          <span>Made on a Tuesday.</span>
+        </div>
+      </div>
+    </footer>
+  );
+}
+function ContactModal({ open, onClose }) {
+  const [sent,setSent]=useState(false);
+  useEffect(()=>{ if(open) setSent(false); },[open]);
+  if(!open) return null;
+  return (
+    <div onClick={onClose} style={{ position:'fixed',inset:0,background:'rgba(11,11,12,.55)',backdropFilter:'blur(4px)',display:'grid',placeItems:'center',zIndex:100,padding:20 }}>
+      <div onClick={e=>e.stopPropagation()} style={{ width:'min(520px,100%)',background:'var(--paper)',border:'2px solid var(--ink)',borderRadius:'var(--r-lg)',boxShadow:'8px 8px 0 var(--ink)',padding:32 }}>
+        {sent?(
+          <div style={{ textAlign:'center',padding:'24px 0' }}>
+            <div style={{ fontFamily:'var(--font-mono)',fontSize:12,color:'var(--red)',letterSpacing:'.1em',textTransform:'uppercase',marginBottom:12 }}>Brief received</div>
+            <h3 style={{ fontFamily:'var(--font-display)',fontSize:32,textTransform:'uppercase',letterSpacing:'-0.02em',margin:'0 0 12px' }}>Talk soon.</h3>
+            <p style={{ color:'var(--muted)',marginBottom:24 }}>First reply in under a day — usually a lot less.</p>
+            <Button variant="primary" onClick={onClose}>Close</Button>
+          </div>
+        ):(
+          <>
+            <div style={{ display:'flex',justifyContent:'space-between',alignItems:'flex-start',marginBottom:22 }}>
+              <div><span className="kit-tag">Start a project</span><h3 style={{ fontFamily:'var(--font-display)',fontSize:30,textTransform:'uppercase',letterSpacing:'-0.02em',margin:'10px 0 0' }}>Tell us the thing.</h3></div>
+              <IconButton variant="solid" shape="square" aria-label="Close" onClick={onClose} style={{ fontSize:14 }}>✕</IconButton>
+            </div>
+            <div style={{ display:'grid',gridTemplateColumns:'1fr 1fr',gap:16,marginBottom:16 }}>
+              <Input label="Name" placeholder="Jane Maker"/>
+              <Input label="Email" type="email" placeholder="you@studio.com"/>
+            </div>
+            <div style={{ marginBottom:20 }}><Textarea label="What are you making?" rows={3} placeholder="A launch film, a new site, a full rebrand…"/></div>
+            <div style={{ display:'flex',justifyContent:'flex-end',gap:12 }}>
+              <Button variant="ghost" onClick={onClose}>Cancel</Button>
+              <Button variant="primary" onClick={()=>setSent(true)}>Send brief</Button>
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+function CtaBand({ onStart }) {
+  return (
+    <section className="cta">
+      <div className="cta-inner">
+        <h2 style={{ fontFamily:'var(--font-display)',fontSize:'clamp(44px,7vw,96px)',lineHeight:.92,letterSpacing:'-0.04em',textTransform:'uppercase',margin:0,color:'#fff' }}>
+          Got a thing?<br/><Stroke ink={false}>Let's make it.</Stroke>
+        </h2>
+        <p style={{ fontSize:20,margin:'24px auto 36px',maxWidth:560,color:'rgba(255,255,255,.92)' }}>
+          We take on six projects a quarter. Q3 has two slots open. First reply in under a day.
+        </p>
+        <div style={{ display:'flex',gap:14,flexWrap:'wrap',justifyContent:'center' }}>
+          <Button variant="dark" onClick={onStart} style={{ borderColor:'#fff',boxShadow:'4px 4px 0 #fff' }}>Start a project</Button>
+          <Button variant="ghost" href="mailto:hello@crtr.studio" style={{ borderColor:'#fff',color:'#fff' }}>hello@crtr.studio</Button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── PAGE SECTIONS ── */
+
+const ALL_WORK = [
+  { tone:'darkGrad', meta:'2025 · Brand film · Motion + edit', title:'Halftime — full reset' },
+  { tone:'red',      meta:'2025 · Identity · Packaging',       title:'Marrow Coffee' },
+  { tone:'ink',      meta:'2025 · Edit · Sound design',        title:'Sage Podcast' },
+  { tone:'paper',    meta:'2024 · Web · 14 pages',             title:'Northwall — Series A' },
+  { tone:'steel',    meta:'2024 · Motion · 3D',                title:'Orbital · Launch loop' },
+  { tone:'gold',     meta:"2024 · Graphic · Print",            title:"Field guide '24" },
+  { tone:'redGrad',  meta:'2024 · Editorial · Web + print',    title:'Issue 03' },
+  { tone:'ink',      meta:'2023 · Brand film · Motion',        title:'Halo — product launch' },
+  { tone:'paper',    meta:'2023 · Identity · Social',          title:'Bloom Studio' },
+  { tone:'steel',    meta:'2023 · Web · CMS',                  title:'Verge — redesign' },
+];
+function PageHero() {
+  return (
+    <section className="page-hero on-ink">
+      <div className="kit-wrap">
+        <span className="kit-tag">Selected work</span>
+        <h1><Stroke ink={false}>Work.</Stroke></h1>
+        <p className="lede">120+ projects shipped since 2021. Brand films, motion packages, marketing sites and identity systems for teams that refuse to be ignored.</p>
+      </div>
+    </section>
+  );
+}
+function WorkIndex() {
+  return (
+    <section className="kit-section">
+      <div className="kit-wrap">
+        <div className="work-index">
+          {ALL_WORK.map((w,i)=>(
+            <WorkCard key={i} tone={w.tone} meta={w.meta} title={w.title} href="case-study.html" style={{ minHeight:300 }}/>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+function App() {
+  const [modal,setModal]=useState(false);
+  return <><SiteNav/><PageHero/><WorkIndex/><CtaBand onStart={()=>setModal(true)}/><Footer/><ContactModal open={modal} onClose={()=>setModal(false)}/></>;
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>
