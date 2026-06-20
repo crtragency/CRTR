@@ -1,0 +1,12 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/assets/crtr-logo.jpg", "destination": "/crtr-logo.jpg" },
+    { "source": "/", "destination": "/CRTR Landing.html" },
+    { "source": "/home", "destination": "/CRTR Landing.html" },
+    { "source": "/standalone", "destination": "/CRTR Landing - Standalone.html" },
+    { "source": "/standalone-print", "destination": "/CRTR Landing - Standalone-print.html" },
+    { "source": "/mndr-studio", "destination": "/MNDR Studio - Mono.html" }
+  ]
+}
