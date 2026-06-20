@@ -1,0 +1,26 @@
+/* ============================================================
+   CRTR — Elevation: hard offset shadows
+   The brand's signature depth is a solid, OFFSET ink shadow
+   (no blur) — a print/risograph feel — paired with subtle
+   ambient shadows on dark surfaces. Avoid soft drop shadows.
+   ============================================================ */
+
+:root {
+  /* ---------- HARD OFFSET (signature) ---------- */
+  --shadow-hard-sm:  3px 3px 0 var(--ink);
+  --shadow-hard:     4px 4px 0 var(--ink);
+  --shadow-hard-lg:  6px 6px 0 var(--ink);
+  --shadow-hard-xl:  8px 8px 0 var(--ink);
+
+  /* inverted (on dark / red surfaces, paper-colored offset) */
+  --shadow-hard-inv:    4px 4px 0 var(--paper);
+  --shadow-hard-inv-sm: 2px 2px 0 var(--paper);
+
+  /* ---------- AMBIENT (subtle, for floating chrome only) ---------- */
+  --shadow-ambient:   0 1px 3px rgba(11,11,12,.10);
+  --shadow-pop:       0 8px 30px rgba(11,11,12,.18);
+
+  /* ---------- FOCUS RING ---------- */
+  --ring:        0 0 0 3px rgba(229,35,44,.30);
+  --ring-ink:    0 0 0 3px rgba(11,11,12,.18);
+}

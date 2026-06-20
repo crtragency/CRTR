@@ -1,0 +1,44 @@
+<!-- @dsCard group="Components" viewport="700x340" name="Cards & Data Display" subtitle="Card, ServiceTile, Badge, Tag — bordered surfaces with hard shadows" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  body { margin: 0; background: var(--paper); padding: 28px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+  const { Card, ServiceTile, Badge, Tag } = window.CRTRDesignSystem_b33342;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    <div>
+      <div class="chips">
+        <Badge tone="ink" dot>Booking — May</Badge>
+        <Badge tone="red">New</Badge>
+        <Badge tone="paper" dot>Available</Badge>
+        <Badge tone="softred">Limited</Badge>
+        <Tag>After Effects</Tag><Tag>Next.js</Tag><Tag>Color</Tag>
+      </div>
+      <div class="grid" style={{marginTop:18}}>
+        <Card>
+          <div style={{fontFamily:'var(--font-mono)',fontSize:11,textTransform:'uppercase',letterSpacing:'.08em',color:'var(--muted)'}}>2025 · Identity</div>
+          <h4 style={{margin:'6px 0 8px'}}>Marrow Coffee</h4>
+          <p style={{fontSize:14}}>Sharper, not louder — an identity rework that didn't scare the regulars.</p>
+        </Card>
+        <ServiceTile num="02" title="Motion design" tags={['After Effects','3D','Lottie']}>
+          Logo animations, kinetic type, product explainers. Frame-by-frame craft.
+        </ServiceTile>
+      </div>
+    </div>
+  );
+</script>
+</body>
+</html>

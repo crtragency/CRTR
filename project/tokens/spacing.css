@@ -1,0 +1,44 @@
+/* ============================================================
+   CRTR — Spacing, radii, layout tokens
+   The brand reads as architectural: generous section rhythm,
+   pill controls, modest card radii, hard structural lines.
+   ============================================================ */
+
+:root {
+  /* ---------- SPACE SCALE (4px base) ---------- */
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-16:  64px;
+  --space-20:  80px;
+  --space-24:  96px;
+  --space-30:  120px;  /* section padding (desktop) */
+
+  /* ---------- RADII ---------- */
+  --r-xs:    6px;    /* chips, small marks */
+  --r-sm:    8px;    /* brand mark, inputs */
+  --r-md:    12px;
+  --r-lg:    18px;   /* work cards, tiles */
+  --r-xl:    24px;   /* large containers */
+  --r-pill:  999px;  /* buttons, eyebrows, badges */
+
+  /* ---------- BORDERS ---------- */
+  --bw-hair:   1px;
+  --bw:        1.5px;   /* the CRTR signature structural line */
+  --bw-bold:   2px;     /* hero frames, emphasis */
+
+  /* ---------- LAYOUT ---------- */
+  --container:    1320px;
+  --container-sm: 980px;
+  --gutter:       32px;
+  --gutter-sm:    20px;
+  --section-py:   120px;
+  --section-py-sm:80px;
+  --nav-h:        72px;
+}

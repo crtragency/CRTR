@@ -1,0 +1,27 @@
+<!-- @dsCard group="Brand" viewport="700x180" name="Motion · Easing & Duration" subtitle="Cinematic, intentional — expo-out reveals, snappy UI" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; background: var(--paper); padding: 22px; }
+  .row { display: flex; flex-direction: column; gap: 12px; }
+  .track { display: flex; align-items: center; gap: 14px; }
+  .label { font-family: var(--font-mono); font-size: 11px; color: var(--muted); width: 200px; flex: none; }
+  .rail { flex: 1; height: 10px; background: var(--paper-2); border: 1px solid var(--ink); border-radius: 999px; position: relative; overflow: hidden; }
+  .dot { position: absolute; top: -3px; left: 0; width: 16px; height: 16px; border-radius: 50%; background: var(--red); border: 1.5px solid var(--ink); }
+  .e1 { animation: run 2.6s var(--ease-out) infinite; }
+  .e2 { animation: run 2.6s var(--ease-ui) infinite; }
+  .e3 { animation: run 2.6s var(--ease-snap) infinite; }
+  @keyframes run { 0% { left: 0; } 50% { left: calc(100% - 16px); } 100% { left: 0; } }
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="track"><span class="label">ease-out · reveals · 600ms</span><div class="rail"><span class="dot e1"></span></div></div>
+  <div class="track"><span class="label">ease-ui · general · 250ms</span><div class="rail"><span class="dot e2"></span></div></div>
+  <div class="track"><span class="label">ease-snap · button press · 180ms</span><div class="rail"><span class="dot e3"></span></div></div>
+</div>
+</body>
+</html>

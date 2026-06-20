@@ -1,0 +1,24 @@
+<!-- @dsCard group="Brand" viewport="700x200" name="Logo · Contexts" subtitle="Placement on paper, ink and red — keep the frame & breathing room" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; background: var(--paper); padding: 22px; }
+  .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .ctx { height: 130px; border-radius: var(--r-md); border: var(--bw) solid var(--ink); display: grid; place-items: center; }
+  .mark { width: 56px; height: 56px; border-radius: var(--r-sm); background: var(--red); border: var(--bw) solid var(--ink); display: grid; place-items: center; color: #fff; font-family: var(--font-display); font-size: 20px; box-shadow: var(--shadow-hard-sm); }
+  .on-ink .mark { box-shadow: var(--shadow-hard-inv-sm); }
+  .label { position: relative; }
+  .cap { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-top: 8px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="row">
+  <div><div class="ctx" style="background:var(--paper)"><span class="mark">C.</span></div><div class="cap">On paper</div></div>
+  <div class="on-ink"><div class="ctx" style="background:var(--ink)"><span class="mark">C.</span></div><div class="cap">On ink</div></div>
+  <div><div class="ctx" style="background:var(--red)"><span class="mark" style="background:var(--ink);box-shadow:var(--shadow-hard-inv-sm)">C.</span></div><div class="cap">On red · invert mark to ink</div></div>
+</div>
+</body>
+</html>

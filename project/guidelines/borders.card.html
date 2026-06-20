@@ -1,0 +1,21 @@
+<!-- @dsCard group="Spacing" viewport="700x140" name="Structural Lines" subtitle="The 1.5px ink border is the brand's load-bearing element" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; background: var(--paper); padding: 24px; }
+  .row { display: flex; gap: 18px; align-items: stretch; }
+  .item { flex: 1; padding: 16px; border-radius: var(--r-sm); background: var(--paper); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="item" style="border:1px solid var(--ink)">hair · 1px</div>
+  <div class="item" style="border:1.5px solid var(--ink)">signature · 1.5px</div>
+  <div class="item" style="border:2px solid var(--ink)">bold · 2px</div>
+  <div class="item" style="border:1px solid var(--border-soft)">soft · 12% ink</div>
+</div>
+</body>
+</html>

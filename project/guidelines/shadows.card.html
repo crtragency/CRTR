@@ -1,0 +1,24 @@
+<!-- @dsCard group="Spacing" viewport="700x180" name="Elevation · Hard Offset" subtitle="Solid, blur-free ink shadows — the signature depth" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; background: var(--paper); padding: 30px 24px; }
+  .row { display: flex; gap: 34px; align-items: center; }
+  .item { text-align: center; }
+  .box { width: 88px; height: 60px; background: var(--paper); border: var(--bw) solid var(--ink); border-radius: var(--r-sm); }
+  .label { font-family: var(--font-mono); font-size: 11px; color: var(--muted); margin-top: 14px; }
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="item"><div class="box" style="box-shadow:var(--shadow-hard-sm)"></div><div class="label">hard-sm · 3px</div></div>
+  <div class="item"><div class="box" style="box-shadow:var(--shadow-hard)"></div><div class="label">hard · 4px</div></div>
+  <div class="item"><div class="box" style="box-shadow:var(--shadow-hard-lg)"></div><div class="label">hard-lg · 6px</div></div>
+  <div class="item"><div class="box" style="box-shadow:var(--shadow-hard-xl)"></div><div class="label">hard-xl · 8px</div></div>
+  <div class="item"><div class="box" style="background:var(--red);box-shadow:var(--shadow-pop)"></div><div class="label">pop · ambient</div></div>
+</div>
+</body>
+</html>

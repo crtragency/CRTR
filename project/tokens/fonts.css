@@ -1,0 +1,8 @@
+/* ============================================================
+   CRTR — Webfonts
+   Archivo (body/UI), Archivo Black (display), JetBrains Mono (mono/labels)
+   All open-source via Google Fonts. If you need self-hosted binaries,
+   swap these @import lines for local @font-face rules.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,900&family=Archivo+Black&family=JetBrains+Mono:wght@400;500;700&display=swap');

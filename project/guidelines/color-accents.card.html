@@ -1,0 +1,25 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Accents & Neutrals" subtitle="Supporting accents (sparingly) and the text ramp" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; background: var(--paper); padding: 20px; }
+  .row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .sw { border: var(--bw) solid var(--ink); border-radius: var(--r-sm); overflow: hidden; }
+  .chip { height: 64px; }
+  .meta { padding: 8px 10px; background: var(--paper); }
+  .name { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink); }
+  .hex { font-family: var(--font-mono); font-size: 11px; color: var(--muted); margin-top: 2px; }
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="sw"><div class="chip" style="background:var(--gold)"></div><div class="meta"><div class="name">Gold · editorial</div><div class="hex">#F2C94C</div></div></div>
+  <div class="sw"><div class="chip" style="background:var(--steel)"></div><div class="meta"><div class="name">Steel · cinematic</div><div class="hex">#0F2438</div></div></div>
+  <div class="sw"><div class="chip" style="background:var(--muted)"></div><div class="meta"><div class="name">Muted</div><div class="hex">#6B6A68</div></div></div>
+  <div class="sw"><div class="chip" style="background:var(--muted-2)"></div><div class="meta"><div class="name">Muted 2 · on ink</div><div class="hex">#A3A2A0</div></div></div>
+</div>
+</body>
+</html>

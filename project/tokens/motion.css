@@ -1,0 +1,25 @@
+/* ============================================================
+   CRTR — Motion tokens
+   Cinematic, intentional motion. Premium easing (expo-out for
+   reveals, standard for UI), no default linear bounces.
+   ============================================================ */
+
+:root {
+  /* ---------- DURATIONS ---------- */
+  --dur-instant: 120ms; /* @kind other */
+  --dur-fast:    180ms; /* @kind other */
+  --dur-base:    250ms; /* @kind other */
+  --dur-slow:    400ms; /* @kind other */
+  --dur-reveal:  600ms; /* @kind other */
+  --dur-cine:    900ms; /* @kind other */
+
+  /* ---------- EASINGS ---------- */
+  --ease-ui:      cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --ease-out:     cubic-bezier(0.22, 1, 0.36, 1); /* @kind other */
+  --ease-in-out:  cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --ease-snap:    cubic-bezier(0.2, 0.9, 0.3, 1.2); /* @kind other */
+
+  /* ---------- HOVER LIFT (hard-shadow pattern) ---------- */
+  --lift:        translate(-2px, -2px); /* @kind other */
+  --lift-lg:     translate(-3px, -3px); /* @kind other */
+}

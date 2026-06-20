@@ -1,0 +1,81 @@
+/* ============================================================
+   CRTR — Base element styles & a few brand utility classes.
+   Tokens live in tokens/*.css; this file applies them to bare
+   elements and exposes helper classes used across cards & kits.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--text-1);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: var(--fw-black);
+  text-transform: uppercase;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-display);
+  color: var(--text-1);
+}
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+h4 { font-size: var(--fs-h4); }
+h5 { font-size: var(--fs-h5); }
+h6 { font-size: var(--fs-h6); }
+
+p { margin: 0; color: var(--text-2); line-height: var(--lh-body); }
+
+/* ---------- BRAND UTILITY CLASSES ---------- */
+
+/* Mono eyebrow pill */
+.crtr-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-eyebrow);
+  color: var(--ink);
+  background: var(--paper-2);
+  border: var(--bw) solid var(--ink);
+  padding: 6px 12px;
+  border-radius: var(--r-pill);
+}
+
+/* Section tag — "/ Services 01" */
+.crtr-tag {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-eyebrow-w);
+  color: var(--red);
+}
+.crtr-tag::before { content: '/ '; color: var(--ink); opacity: .4; }
+
+/* Outlined "stroke" headline word */
+.crtr-stroke {
+  -webkit-text-stroke: var(--bw) var(--ink);
+  color: transparent;
+}
+
+/* Container */
+.crtr-wrap {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+@media (max-width: 640px) { .crtr-wrap { padding: 0 var(--gutter-sm); } }

@@ -1,0 +1,58 @@
+/* ============================================================
+   CRTR — Color tokens
+   Source of truth: crtr-logo.jpg (vivid red field, black mascot,
+   white frame). The system is built from three pillars —
+   RED (energy), INK (authority), PAPER (premium cream canvas).
+   ============================================================ */
+
+:root {
+  /* ---------- BRAND: RED (the signal color) ---------- */
+  --red:            #E5232C;   /* logo red — primary brand */
+  --red-deep:       #B81820;   /* pressed / deep accents */
+  --red-darker:     #7A0A10;   /* gradient floor */
+  --red-soft:       #FFE7E8;   /* tinted fills, hover wash */
+
+  /* ---------- BRAND: INK (near-black authority) ---------- */
+  --ink:            #0B0B0C;   /* primary text, borders, dark sections */
+  --ink-2:          #1A1A1C;   /* raised ink surface */
+  --ink-3:          #2A2A2D;   /* hairlines on ink */
+
+  /* ---------- BRAND: PAPER (warm premium canvas) ---------- */
+  --paper:          #F4F1EC;   /* page background */
+  --paper-2:        #EAE6DF;   /* recessed panels, chips */
+  --paper-3:        #E8E4DA;   /* light feature tiles */
+  --white:          #FFFFFF;
+
+  /* ---------- SUPPORTING ACCENTS (sparingly, in work tiles) ---------- */
+  --gold:           #F2C94C;   /* editorial highlight */
+  --steel:          #0F2438;   /* deep cinematic blue */
+
+  /* ---------- NEUTRAL TEXT RAMP ---------- */
+  --muted:          #6B6A68;   /* secondary text on paper */
+  --muted-2:        #A3A2A0;   /* tertiary text on ink */
+
+  /* ---------- SEMANTIC ALIASES ---------- */
+  --bg:             var(--paper);
+  --bg-section:     var(--paper);
+  --bg-dark:        var(--ink);
+  --surface-card:   var(--paper);
+  --surface-panel:  var(--paper-2);
+
+  --text-1:         var(--ink);     /* headings, primary */
+  --text-2:         var(--ink-2);   /* body */
+  --text-3:         var(--muted);   /* secondary / lede */
+  --text-on-ink:    var(--paper);
+  --text-on-ink-2:  var(--muted-2);
+  --text-on-red:    var(--white);
+
+  --accent:         var(--red);
+  --accent-press:   var(--red-deep);
+
+  --border:         var(--ink);              /* the signature 1.5px ink line */
+  --border-soft:    rgba(11,11,12,.12);
+  --border-on-ink:  var(--ink-3);
+
+  /* status — used only in product/forms, kept restrained */
+  --success:        #1F9D55;
+  --error:          var(--red);
+}

@@ -1,0 +1,25 @@
+<!-- @dsCard group="Spacing" viewport="700x160" name="Space Scale" subtitle="4px base — architectural rhythm" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; background: var(--paper); padding: 24px; }
+  .stack { display: flex; flex-direction: column; gap: 9px; }
+  .row { display: flex; align-items: center; gap: 14px; }
+  .bar { height: 14px; background: var(--red); border: 1px solid var(--ink); }
+  .label { font-family: var(--font-mono); font-size: 11px; color: var(--muted); width: 110px; }
+</style>
+</head>
+<body>
+<div class="stack">
+  <div class="row"><span class="label">2 · 8px</span><div class="bar" style="width:8px"></div></div>
+  <div class="row"><span class="label">4 · 16px</span><div class="bar" style="width:16px"></div></div>
+  <div class="row"><span class="label">6 · 24px</span><div class="bar" style="width:24px"></div></div>
+  <div class="row"><span class="label">10 · 40px</span><div class="bar" style="width:40px"></div></div>
+  <div class="row"><span class="label">16 · 64px</span><div class="bar" style="width:64px"></div></div>
+  <div class="row"><span class="label">30 · 120px · section</span><div class="bar" style="width:120px"></div></div>
+</div>
+</body>
+</html>

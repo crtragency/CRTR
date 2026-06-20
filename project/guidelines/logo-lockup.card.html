@@ -1,0 +1,24 @@
+<!-- @dsCard group="Brand" viewport="700x230" name="Logo · Lockup" subtitle="The mascot mark + CRTR. wordmark on the framed red field" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; background: var(--paper); padding: 24px; display: flex; gap: 28px; align-items: center; }
+  .logo { width: 150px; height: 150px; border-radius: var(--r-md); border: var(--bw) solid var(--ink); box-shadow: var(--shadow-hard); overflow: hidden; flex: none; }
+  .logo img { width: 100%; height: 100%; object-fit: cover; }
+  .lockup { display: flex; align-items: center; gap: 12px; }
+  .mark { width: 44px; height: 44px; border-radius: var(--r-sm); background: var(--red); border: var(--bw) solid var(--ink); box-shadow: var(--shadow-hard-sm); display: grid; place-items: center; color: #fff; font-family: var(--font-display); font-size: 16px; }
+  .word { font-family: var(--font-display); font-size: 26px; letter-spacing: -0.02em; color: var(--ink); }
+  .note { font-family: var(--font-mono); font-size: 11px; color: var(--muted); margin-top: 14px; }
+</style>
+</head>
+<body>
+<div class="logo"><img src="../assets/crtr-logo.jpg" alt="CRTR logo" /></div>
+<div>
+  <div class="lockup"><span class="mark">C.</span><span class="word">CRTR.</span></div>
+  <div class="note">Primary lockup · mark + wordmark · Archivo Black</div>
+</div>
+</body>
+</html>

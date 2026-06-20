@@ -1,0 +1,24 @@
+<!-- @dsCard group="Type" viewport="700x300" name="Type Scale" subtitle="Display → caption, with role and size" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; background: var(--paper); padding: 24px; color: var(--ink); }
+  .line { display: flex; align-items: baseline; gap: 16px; padding: 7px 0; border-bottom: 1px solid var(--border-soft); }
+  .label { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); width: 130px; flex: none; }
+  .spec { font-family: var(--font-display); text-transform: uppercase; letter-spacing: -0.03em; line-height: 1; }
+  .body { font-family: var(--font-sans); }
+</style>
+</head>
+<body>
+  <div class="line"><span class="label">H1 · 84/clamp</span><span class="spec" style="font-size:40px">Headline</span></div>
+  <div class="line"><span class="label">H2 · 56</span><span class="spec" style="font-size:32px">Sub-section</span></div>
+  <div class="line"><span class="label">H3 · 32</span><span class="spec" style="font-size:26px">Service title</span></div>
+  <div class="line"><span class="label">Lead · 20</span><span class="body" style="font-size:20px;font-weight:500">Hero subhead & section lede</span></div>
+  <div class="line"><span class="label">Body · 16</span><span class="body" style="font-size:16px">Default paragraph text for the studio.</span></div>
+  <div class="line"><span class="label">Small · 14</span><span class="body" style="font-size:14px">Nav links and meta.</span></div>
+  <div class="line"><span class="label">Caption · 12</span><span class="body" style="font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)">Mono eyebrow / caption</span></div>
+</body>
+</html>

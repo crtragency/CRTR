@@ -1,0 +1,25 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Brand · Red" subtitle="The signal color — extracted from the logo field" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; background: var(--paper); padding: 20px; }
+  .row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .sw { border: var(--bw) solid var(--ink); border-radius: var(--r-sm); overflow: hidden; }
+  .chip { height: 64px; }
+  .meta { padding: 8px 10px; background: var(--paper); }
+  .name { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink); }
+  .hex { font-family: var(--font-mono); font-size: 11px; color: var(--muted); margin-top: 2px; }
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="sw"><div class="chip" style="background:var(--red)"></div><div class="meta"><div class="name">Red</div><div class="hex">#E5232C</div></div></div>
+  <div class="sw"><div class="chip" style="background:var(--red-deep)"></div><div class="meta"><div class="name">Red Deep</div><div class="hex">#B81820</div></div></div>
+  <div class="sw"><div class="chip" style="background:var(--red-darker)"></div><div class="meta"><div class="name">Red Darker</div><div class="hex">#7A0A10</div></div></div>
+  <div class="sw"><div class="chip" style="background:var(--red-soft)"></div><div class="meta"><div class="name">Red Soft</div><div class="hex">#FFE7E8</div></div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Paper · Canvas" subtitle="Warm cream surfaces — the premium background" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; background: var(--ink); padding: 20px; }
+  .row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .sw { border: var(--bw) solid var(--ink); border-radius: var(--r-sm); overflow: hidden; }
+  .chip { height: 64px; }
+  .meta { padding: 8px 10px; background: var(--paper); }
+  .name { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink); }
+  .hex { font-family: var(--font-mono); font-size: 11px; color: var(--muted); margin-top: 2px; }
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="sw"><div class="chip" style="background:var(--paper)"></div><div class="meta"><div class="name">Paper</div><div class="hex">#F4F1EC</div></div></div>
+  <div class="sw"><div class="chip" style="background:var(--paper-2)"></div><div class="meta"><div class="name">Paper 2</div><div class="hex">#EAE6DF</div></div></div>
+  <div class="sw"><div class="chip" style="background:var(--paper-3)"></div><div class="meta"><div class="name">Paper 3</div><div class="hex">#E8E4DA</div></div></div>
+  <div class="sw"><div class="chip" style="background:var(--white)"></div><div class="meta"><div class="name">White</div><div class="hex">#FFFFFF</div></div></div>
+</div>
+</body>
+</html>
