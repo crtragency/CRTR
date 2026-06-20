@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Brand" name="CRTR Landing" subtitle="Bold black/red/cream agency landing — mascot-led, brutalist-tinged" -->
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CRTR. — Creator Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Black&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --red:#E5232C;
+  --red-deep:#B81820;
+  --red-soft:#FFE7E8;
+  --ink:#0B0B0C;
+  --ink-2:#1A1A1C;
+  --paper:#F4F1EC;
+  --paper-2:#EAE6DF;
+  --line:#1A1A1C;
+  --muted:#6B6A68;
+  --serif:'Archivo',sans-serif;
+  --black:'Archivo Black','Archivo',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--serif);
+  background:var(--paper);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  font-size:16px;
+  line-height:1.55;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+/* ---------- LAYOUT ---------- */
+.wrap{max-width:1320px;margin:0 auto;padding:0 32px}
+@media (max-width:640px){ .wrap{padding:0 20px} }
+
+/* ---------- NAV ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:var(--paper);
+  border-bottom:1px solid var(--ink);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  height:72px;
+}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--black);font-size:20px;letter-spacing:-0.02em}
+.brand-mark{
+  width:38px;height:38px;border-radius:8px;background:var(--red);
+  display:grid;place-items:center;color:#fff;font-family:var(--black);font-size:14px;
+  border:1.5px solid var(--ink);
+  box-shadow:3px 3px 0 var(--ink);
+}
+.brand-mark span{transform:translateY(-1px)}
+.nav-links{display:flex;gap:36px;align-items:center}
+.nav-links a{font-size:14px;font-weight:500;position:relative}
+.nav-links a:hover{color:var(--red)}
+.nav-cta{
+  background:var(--ink);color:#fff;
+  padding:10px 18px;border-radius:999px;
+  font-size:14px;font-weight:600;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:transform .2s ease,background .2s ease;
+}
+.nav-cta:hover{background:var(--red);transform:translate(-1px,-1px)}
+.nav-cta .dot{width:6px;height:6px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.25)}
+@media (max-width:880px){ .nav-links{display:none} }
+
+/* ---------- HERO ---------- */
+.hero{
+  padding:80px 0 100px;
+  border-bottom:1px solid var(--ink);
+  position:relative;
+  overflow:hidden;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;
+  color:var(--ink);
+  background:var(--paper-2);
+  border:1px solid var(--ink);
+  padding:6px 12px;border-radius:999px;
+}
+.eyebrow .pulse{width:6px;height:6px;border-radius:50%;background:var(--red);animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+.hero h1{
+  font-family:var(--black);
+  font-size:clamp(56px,9vw,148px);
+  line-height:.92;
+  letter-spacing:-0.045em;
+  margin:24px 0 0;
+  text-transform:uppercase;
+}
+.hero h1 .red{color:var(--red)}
+.hero h1 .ital{font-style:italic;font-family:var(--serif);font-weight:900}
+.hero h1 .stroke{
+  -webkit-text-stroke:2px var(--ink);color:transparent;
+}
+.hero-row{
+  display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:end;
+  margin-top:48px;
+}
+.hero-sub{
+  font-size:20px;line-height:1.45;color:var(--ink-2);max-width:520px;
+  font-weight:500;
+}
+.hero-meta{
+  display:flex;flex-wrap:wrap;gap:32px;justify-content:flex-end;
+}
+.meta-block{display:flex;flex-direction:column}
+.meta-num{font-family:var(--black);font-size:48px;line-height:1;letter-spacing:-0.03em}
+.meta-num em{font-style:normal;color:var(--red)}
+.meta-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-top:6px}
+
+.hero-cta{
+  display:flex;gap:14px;flex-wrap:wrap;margin-top:36px;
+}
+.btn{
+  font-family:var(--serif);font-weight:600;font-size:15px;
+  padding:14px 22px;border-radius:999px;
+  display:inline-flex;align-items:center;gap:10px;
+  border:1.5px solid var(--ink);
+  transition:transform .15s ease,box-shadow .15s ease,background .15s ease;
+}
+.btn-primary{background:var(--red);color:#fff;border-color:var(--ink);box-shadow:4px 4px 0 var(--ink)}
+.btn-primary:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.btn-primary:active{transform:translate(0,0);box-shadow:2px 2px 0 var(--ink)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:#fff}
+.btn .arrow{transition:transform .2s ease}
+.btn:hover .arrow{transform:translateX(3px)}
+
+/* mascot floating */
+.mascot{
+  position:absolute;right:-40px;top:140px;width:340px;height:340px;
+  border:2px solid var(--ink);
+  border-radius:18px;
+  background:var(--red);
+  display:grid;place-items:center;
+  box-shadow:8px 8px 0 var(--ink);
+  transform:rotate(4deg);
+  transition:transform .3s ease;
+  pointer-events:auto;
+}
+.mascot:hover{transform:rotate(-2deg) scale(1.02)}
+.mascot img{width:88%;height:88%;object-fit:contain;border-radius:12px}
+@media (max-width:1100px){ .mascot{width:260px;height:260px;top:auto;bottom:-40px;right:-20px} }
+@media (max-width:780px){ .mascot{display:none} }
+
+.marquee-strip{
+  margin-top:80px;
+  border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);
+  background:var(--ink);color:var(--paper);
+  overflow:hidden;
+  position:relative;
+}
+.marquee-track{
+  display:flex;gap:40px;align-items:center;
+  padding:18px 0;
+  white-space:nowrap;
+  animation:marq 28s linear infinite;
+  font-family:var(--black);font-size:28px;text-transform:uppercase;letter-spacing:-0.02em;
+}
+.marquee-track span{display:inline-flex;align-items:center;gap:40px}
+.marquee-track .star{color:var(--red);font-size:20px}
+@keyframes marq{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+/* ---------- SECTION SHELL ---------- */
+.section{padding:120px 0;border-bottom:1px solid var(--ink)}
+.section-head{
+  display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:end;
+  margin-bottom:64px;
+}
+.section-tag{
+  font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--red);
+}
+.section-tag::before{content:'/ ';color:var(--ink);opacity:.4}
+.section h2{
+  font-family:var(--black);
+  font-size:clamp(40px,6vw,84px);
+  line-height:.95;letter-spacing:-0.04em;
+  text-transform:uppercase;
+  margin:14px 0 0;
+}
+.section h2 .stroke{-webkit-text-stroke:1.5px var(--ink);color:transparent}
+.section-lede{font-size:18px;color:var(--muted);max-width:480px;line-height:1.55}
+@media (max-width:780px){
+  .section{padding:80px 0}
+  .section-head{grid-template-columns:1fr;gap:24px}
+}
+
+/* ---------- SERVICES ---------- */
+.services{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1.5px solid var(--ink);border-radius:24px;overflow:hidden;background:var(--paper)}
+.service{
+  padding:40px;
+  display:grid;grid-template-columns:64px 1fr auto;gap:24px;align-items:start;
+  border-right:1px solid var(--ink);
+  border-bottom:1px solid var(--ink);
+  background:var(--paper);
+  position:relative;
+  transition:background .3s ease,color .3s ease;
+  cursor:default;
+}
+.service:nth-child(2n){border-right:none}
+.service:nth-last-child(-n+2){border-bottom:none}
+.service:hover{background:var(--ink);color:var(--paper)}
+.service:hover .svc-num{color:var(--red)}
+.service:hover .svc-arrow{background:var(--red);color:#fff;transform:rotate(-45deg)}
+
+.svc-num{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:6px}
+.svc-body h3{
+  font-family:var(--black);font-size:32px;line-height:1;letter-spacing:-0.03em;
+  text-transform:uppercase;margin:0 0 12px;
+}
+.svc-body p{color:inherit;opacity:.78;font-size:15px;margin:0 0 18px;max-width:38ch}
+.svc-tags{display:flex;flex-wrap:wrap;gap:8px}
+.svc-tag{
+  font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  padding:5px 10px;border:1px solid currentColor;border-radius:999px;opacity:.85;
+}
+.svc-arrow{
+  width:46px;height:46px;border-radius:50%;
+  background:var(--paper-2);color:var(--ink);
+  display:grid;place-items:center;
+  border:1px solid var(--ink);
+  transition:all .3s ease;
+}
+@media (max-width:780px){
+  .services{grid-template-columns:1fr}
+  .service{border-right:none}
+  .service:nth-last-child(-n+2){border-bottom:1px solid var(--ink)}
+  .service:last-child{border-bottom:none}
+  .service{padding:28px}
+  .svc-body h3{font-size:26px}
+}
+
+/* ---------- WORK / SHOWCASE ---------- */
+.work-grid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  grid-auto-rows:200px;
+  gap:18px;
+}
+.work-card{
+  border:1.5px solid var(--ink);border-radius:18px;overflow:hidden;
+  position:relative;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:22px;color:#fff;
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.work-card:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--ink)}
+.work-card .meta{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;opacity:.85}
+.work-card .title{font-family:var(--black);font-size:22px;letter-spacing:-0.02em;text-transform:uppercase;margin-top:4px;line-height:1}
+.wc-1{grid-column:span 4;grid-row:span 2;background:linear-gradient(135deg,#0B0B0C 0%,#2a2a2d 100%);}
+.wc-2{grid-column:span 2;grid-row:span 1;background:var(--red);}
+.wc-3{grid-column:span 2;grid-row:span 1;background:#1A1A1C;}
+.wc-4{grid-column:span 3;grid-row:span 2;background:#E8E4DA;color:var(--ink);}
+.wc-5{grid-column:span 3;grid-row:span 1;background:#0F2438;}
+.wc-6{grid-column:span 2;grid-row:span 1;background:#F2C94C;color:var(--ink);}
+.wc-7{grid-column:span 4;grid-row:span 1;background:linear-gradient(135deg,var(--red) 0%,#7a0a10 100%);}
+
+.wc-deco{position:absolute;inset:0;pointer-events:none;opacity:.6}
+.wc-1 .wc-deco{
+  background:
+    radial-gradient(circle at 30% 30%,rgba(229,35,44,.4),transparent 50%),
+    radial-gradient(circle at 80% 70%,rgba(255,255,255,.08),transparent 60%);
+}
+.wc-2::after{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(45deg,transparent 0 12px,rgba(0,0,0,.08) 12px 13px);
+}
+.wc-3::after{
+  content:'PLAY';position:absolute;top:18px;right:18px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+  background:rgba(255,255,255,.08);padding:5px 9px;border-radius:6px;border:1px solid rgba(255,255,255,.2);
+}
+.wc-4 .wc-deco{
+  background:
+    radial-gradient(circle at 50% 0%,rgba(229,35,44,.18),transparent 60%);
+}
+.wc-5::after{
+  content:'';position:absolute;top:24px;right:24px;width:54px;height:54px;
+  border-radius:50%;background:radial-gradient(circle,#fff 0%,#fff 30%,transparent 30%) 0 0/8px 8px;
+  opacity:.25;
+}
+.wc-6::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:8px;background:var(--ink);
+}
+.wc-7 .wc-deco{
+  background:repeating-linear-gradient(90deg,transparent 0 28px,rgba(255,255,255,.08) 28px 29px);
+}
+
+@media (max-width:880px){
+  .work-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px}
+  .wc-1,.wc-2,.wc-3,.wc-4,.wc-5,.wc-6,.wc-7{grid-column:span 2;grid-row:span 1}
+  .wc-1,.wc-4{grid-row:span 2}
+}
+
+/* ---------- PROCESS ---------- */
+.process{background:var(--ink);color:var(--paper);border-radius:0;border:none;margin:0;padding:120px 0}
+.process .section-tag{color:var(--red)}
+.process .section-tag::before{color:var(--paper);opacity:.4}
+.process h2{color:var(--paper)}
+.process h2 .stroke{-webkit-text-stroke:1.5px var(--paper);color:transparent}
+.process .section-lede{color:#a3a2a0}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid #2a2a2d;border-bottom:1px solid #2a2a2d}
+.step{
+  padding:36px 28px;border-right:1px solid #2a2a2d;
+  position:relative;
+}
+.step:last-child{border-right:none}
+.step-num{
+  font-family:var(--mono);font-size:12px;color:var(--red);letter-spacing:.08em;
+  display:flex;align-items:center;gap:8px;margin-bottom:24px;
+}
+.step-num::before{content:'';width:24px;height:1px;background:var(--red)}
+.step h3{font-family:var(--black);font-size:26px;letter-spacing:-0.02em;text-transform:uppercase;margin:0 0 12px;line-height:1}
+.step p{color:#a3a2a0;font-size:14px;line-height:1.55;margin:0}
+@media (max-width:880px){
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .step:nth-child(2){border-right:none}
+  .step:nth-child(1),.step:nth-child(2){border-bottom:1px solid #2a2a2d}
+}
+@media (max-width:540px){
+  .steps{grid-template-columns:1fr}
+  .step{border-right:none;border-bottom:1px solid #2a2a2d}
+  .step:last-child{border-bottom:none}
+}
+
+/* ---------- TESTIMONIAL ---------- */
+.testi{padding:120px 0}
+.testi-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:start}
+.testi-quote{
+  font-family:var(--black);font-size:clamp(28px,3.4vw,44px);
+  line-height:1.15;letter-spacing:-0.02em;
+}
+.testi-quote .red{color:var(--red)}
+.testi-author{
+  margin-top:32px;display:flex;align-items:center;gap:14px;
+  padding-top:24px;border-top:1px solid var(--ink);
+}
+.testi-avatar{width:48px;height:48px;border-radius:50%;background:var(--red);border:1.5px solid var(--ink);display:grid;place-items:center;color:#fff;font-family:var(--black);font-size:16px}
+.testi-meta{display:flex;flex-direction:column}
+.testi-name{font-weight:700;font-size:15px}
+.testi-role{font-family:var(--mono);font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.testi-side{display:flex;flex-direction:column;gap:16px}
+.mini-testi{
+  padding:24px;border:1.5px solid var(--ink);border-radius:18px;background:var(--paper);
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.mini-testi:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+.mini-testi p{font-size:15px;line-height:1.5;margin:0 0 14px}
+.mini-testi .who{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.stars{color:var(--red);font-size:14px;letter-spacing:2px;margin-bottom:8px}
+@media (max-width:880px){ .testi-grid{grid-template-columns:1fr} }
+
+/* ---------- CTA ---------- */
+.cta{
+  padding:140px 0;background:var(--red);color:#fff;border-bottom:1px solid var(--ink);
+  position:relative;overflow:hidden;
+}
+.cta::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(135deg,transparent 0 28px,rgba(0,0,0,.06) 28px 29px);
+  pointer-events:none;
+}
+.cta-inner{position:relative;text-align:center;max-width:980px;margin:0 auto;padding:0 32px}
+.cta h2{
+  font-family:var(--black);font-size:clamp(48px,7.5vw,112px);line-height:.92;letter-spacing:-0.04em;
+  text-transform:uppercase;margin:0;
+}
+.cta h2 .stroke{-webkit-text-stroke:2px #fff;color:transparent}
+.cta p{font-size:20px;margin:24px auto 36px;max-width:560px;color:rgba(255,255,255,.92)}
+.cta .btn-primary{background:var(--ink);color:#fff;border-color:#fff;box-shadow:4px 4px 0 #fff}
+.cta .btn-primary:hover{box-shadow:6px 6px 0 #fff}
+.cta .btn-ghost{border-color:#fff;color:#fff}
+.cta .btn-ghost:hover{background:#fff;color:var(--ink)}
+
+/* ---------- FOOTER ---------- */
+.footer{
+  background:var(--ink);color:var(--paper);
+  padding:64px 0 32px;
+}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.foot-brand{display:flex;align-items:center;gap:14px;font-family:var(--black);font-size:24px;margin-bottom:16px}
+.foot-brand .brand-mark{box-shadow:2px 2px 0 var(--paper)}
+.foot p{color:#a3a2a0;font-size:14px;line-height:1.6;max-width:300px;margin:0 0 20px}
+.foot h4{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--red);margin:0 0 16px}
+.foot ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.foot ul a{font-size:14px;color:var(--paper)}
+.foot ul a:hover{color:var(--red)}
+.foot-socials{display:flex;gap:10px}
+.soc{
+  width:36px;height:36px;border-radius:50%;border:1px solid #2a2a2d;
+  display:grid;place-items:center;font-family:var(--mono);font-size:11px;
+  transition:background .2s ease,color .2s ease,border-color .2s ease;
+}
+.soc:hover{background:var(--red);color:#fff;border-color:var(--red)}
+.foot-bottom{
+  border-top:1px solid #2a2a2d;padding-top:24px;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+  font-family:var(--mono);font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;
+}
+@media (max-width:880px){
+  .foot-grid{grid-template-columns:1fr 1fr;gap:36px}
+}
+@media (max-width:540px){
+  .foot-grid{grid-template-columns:1fr}
+}
+
+/* mascot peek for sections */
+.peek{
+  position:absolute;width:74px;height:74px;border-radius:14px;
+  background:var(--red);border:1.5px solid var(--ink);
+  display:grid;place-items:center;
+  box-shadow:3px 3px 0 var(--ink);
+  transform:rotate(-8deg);
+}
+.peek img{width:78%;height:78%;object-fit:contain;border-radius:8px}
+
+/* ---------- 3D EFFECTS ---------- */
+.scene{perspective:1400px;perspective-origin:50% 30%}
+.tilt{transform-style:preserve-3d;transition:transform .15s ease-out;will-change:transform}
+.tilt.smooth{transition:transform .6s cubic-bezier(.22,1,.36,1)}
+
+.mascot{transform-style:preserve-3d;transition:transform .12s ease-out}
+.mascot::before{
+  content:'';position:absolute;inset:0;border-radius:18px;
+  background:linear-gradient(135deg,rgba(255,255,255,.18),transparent 50%);
+  pointer-events:none;mix-blend-mode:screen;opacity:.6;
+  transform:translateZ(2px);
+}
+.mascot img{transform:translateZ(40px);transition:transform .3s ease}
+.mascot:hover img{transform:translateZ(60px) scale(1.04)}
+
+/* hero headline depth */
+.hero h1{transform-style:preserve-3d}
+.hero h1 br + span,
+.hero h1 .red,
+.hero h1 .ital,
+.hero h1 .stroke{display:inline-block;transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.hero h1 .red{transform:translateZ(30px)}
+.hero h1 .ital{transform:translateZ(60px)}
+.hero h1 .stroke{transform:translateZ(15px)}
+
+/* service cards 3D */
+.services{transform-style:preserve-3d}
+.service{transform-style:preserve-3d;transition:transform .25s ease-out,background .3s ease,color .3s ease}
+.service .svc-body,
+.service .svc-arrow,
+.service .svc-num{transform:translateZ(30px);transition:transform .3s ease}
+.service:hover .svc-arrow{transform:translateZ(60px) rotate(-45deg)}
+.service:hover .svc-body h3{transform:translateZ(50px)}
+.service .svc-body h3{transition:transform .3s ease}
+
+/* work cards 3D */
+.work-card{transform-style:preserve-3d;transition:transform .3s ease,box-shadow .3s ease}
+.work-card .meta,.work-card .title{transform:translateZ(30px);transition:transform .3s ease}
+.work-card:hover .title{transform:translateZ(60px)}
+
+/* steps depth */
+.step{transform-style:preserve-3d;transition:transform .4s cubic-bezier(.22,1,.36,1)}
+.step:hover{transform:translateZ(20px)}
+.step:hover h3{color:var(--red)}
+
+/* mini testi 3D lift */
+.mini-testi{transform-style:preserve-3d}
+.mini-testi:hover{transform:translateZ(20px) translate(-2px,-2px)}
+
+/* meta numbers 3D */
+.hero-meta{transform-style:preserve-3d}
+.meta-block{transform-style:preserve-3d;transition:transform .4s cubic-bezier(.22,1,.36,1)}
+.meta-block:hover{transform:translateZ(40px)}
+.meta-num{transform-style:preserve-3d}
+.meta-num em{display:inline-block;transform:translateZ(20px);transition:transform .4s ease}
+.meta-block:hover em{transform:translateZ(40px) scale(1.08)}
+
+/* CTA 3D */
+.cta h2{transform-style:preserve-3d}
+.cta h2 .stroke{display:inline-block;transform:translateZ(40px);transition:transform .6s ease}
+.cta:hover h2 .stroke{transform:translateZ(80px)}
+
+/* brand mark 3D */
+.brand-mark{transition:transform .3s cubic-bezier(.22,1,.36,1);transform-style:preserve-3d}
+.brand:hover .brand-mark{transform:rotateY(-20deg) rotateX(10deg) translateZ(8px)}
+
+/* button depth */
+.btn-primary{transform-style:preserve-3d}
+</style>
+<template id="__bundler_thumbnail" data-bg-color="#E5232C">
+  <svg viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg">
+    <rect x="240" y="180" width="720" height="540" fill="none" stroke="#ffffff" stroke-width="32" rx="24" />
+    <circle cx="500" cy="450" r="60" fill="#ffffff" />
+    <circle cx="510" cy="460" r="22" fill="#0B0B0C" />
+    <circle cx="700" cy="450" r="60" fill="#ffffff" />
+    <circle cx="710" cy="460" r="22" fill="#0B0B0C" />
+    <text x="600" y="940" text-anchor="middle" fill="#ffffff" font-family="Archivo Black, Arial Black, sans-serif" font-weight="900" font-size="180" letter-spacing="-6">CRTR.</text>
+    <text x="600" y="1030" text-anchor="middle" fill="#ffffff" font-family="Archivo, Arial, sans-serif" font-weight="500" font-size="48" letter-spacing="6">CREATOR STUDIO</text>
+  </svg>
+</template>
+</head>
+<body>
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#" class="brand" aria-label="CRTR. Creator Studio">
+      <span class="brand-mark"><span>C.</span></span>
+      <span>CRTR.</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#process">Process</a>
+      <a href="#testimonials">Words</a>
+    </nav>
+    <a href="#contact" class="nav-cta">
+      <span class="dot"></span>
+      Booking — May
+    </a>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero scene">
+  <div class="wrap" style="position:relative">
+    <span class="eyebrow"><span class="pulse"></span>A creator-led studio · est. 2021</span>
+    <h1>
+      We make<br />
+      <span class="red">brands</span> that<br />
+      <span class="ital">refuse</span> to sit<br />
+      <span class="stroke">still.</span>
+    </h1>
+
+    <div class="hero-row">
+      <p class="hero-sub">
+        CRTR. is a four-person creator studio shipping bold video, motion,
+        web and graphic work for ambitious teams. No decks of decks — just
+        the thing, made well, on time.
+      </p>
+      <div class="hero-meta">
+        <div class="meta-block">
+          <div class="meta-num"><em>120</em>+</div>
+          <div class="meta-label">Projects shipped</div>
+        </div>
+        <div class="meta-block">
+          <div class="meta-num">38</div>
+          <div class="meta-label">Brands trust us</div>
+        </div>
+        <div class="meta-block">
+          <div class="meta-num"><em>4.9</em>★</div>
+          <div class="meta-label">Avg. client rating</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary">
+        Start a project
+        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#work" class="btn btn-ghost">
+        See selected work
+      </a>
+    </div>
+
+    <div class="mascot" aria-hidden="true">
+      <img src="assets/crtr-logo.jpg" alt="" />
+    </div>
+  </div>
+
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span>VIDEO EDITING <span class="star">★</span> MOTION DESIGN <span class="star">★</span> WEB DEVELOPMENT <span class="star">★</span> GRAPHIC DESIGN <span class="star">★</span> BRAND SYSTEMS <span class="star">★</span> CREATIVE DIRECTION <span class="star">★</span></span>
+      <span>VIDEO EDITING <span class="star">★</span> MOTION DESIGN <span class="star">★</span> WEB DEVELOPMENT <span class="star">★</span> GRAPHIC DESIGN <span class="star">★</span> BRAND SYSTEMS <span class="star">★</span> CREATIVE DIRECTION <span class="star">★</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SERVICES
+     ============================================================ -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="section-tag">Services / 01</span>
+        <h2>Four crafts.<br /><span class="stroke">One studio.</span></h2>
+      </div>
+      <p class="section-lede">
+        We work across the full surface of a brand — from the 6-second cut to the
+        300-page site. Pick the lane that fits, or hand us the whole thing.
+      </p>
+    </div>
+
+    <div class="services scene">
+      <div class="service tilt" data-tilt data-tilt-max="6">
+        <div class="svc-num">/ 01</div>
+        <div class="svc-body">
+          <h3>Video editing</h3>
+          <p>Long-form, short-form, ads, podcasts, sizzle reels. We cut for rhythm and retention — not just to fill the timeline.</p>
+          <div class="svc-tags">
+            <span class="svc-tag">YouTube</span>
+            <span class="svc-tag">Reels</span>
+            <span class="svc-tag">Color</span>
+            <span class="svc-tag">Sound</span>
+          </div>
+        </div>
+        <div class="svc-arrow" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M6 4h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+
+      <div class="service tilt" data-tilt data-tilt-max="6">
+        <div class="svc-num">/ 02</div>
+        <div class="svc-body">
+          <h3>Motion design</h3>
+          <p>Logo animations, kinetic type, product explainers, broadcast packages. Frame-by-frame craft — never preset-y.</p>
+          <div class="svc-tags">
+            <span class="svc-tag">After Effects</span>
+            <span class="svc-tag">3D</span>
+            <span class="svc-tag">Lottie</span>
+            <span class="svc-tag">Rigging</span>
+          </div>
+        </div>
+        <div class="svc-arrow" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M6 4h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+
+      <div class="service tilt" data-tilt data-tilt-max="6">
+        <div class="svc-num">/ 03</div>
+        <div class="svc-body">
+          <h3>Web development</h3>
+          <p>Marketing sites, landing pages, custom CMS, full e-commerce. Designed and built by the same people — no handoff hell.</p>
+          <div class="svc-tags">
+            <span class="svc-tag">Next.js</span>
+            <span class="svc-tag">Webflow</span>
+            <span class="svc-tag">Shopify</span>
+            <span class="svc-tag">Figma</span>
+          </div>
+        </div>
+        <div class="svc-arrow" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M6 4h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+
+      <div class="service tilt" data-tilt data-tilt-max="6">
+        <div class="svc-num">/ 04</div>
+        <div class="svc-body">
+          <h3>Graphic design</h3>
+          <p>Identity systems, packaging, social, print. We treat every grid like it's the last thing standing between you and your audience.</p>
+          <div class="svc-tags">
+            <span class="svc-tag">Identity</span>
+            <span class="svc-tag">Packaging</span>
+            <span class="svc-tag">Social</span>
+            <span class="svc-tag">Print</span>
+          </div>
+        </div>
+        <div class="svc-arrow" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M6 4h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WORK
+     ============================================================ -->
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="section-tag">Selected work / 02</span>
+        <h2>Recent <span class="stroke">drops.</span></h2>
+      </div>
+      <p class="section-lede">
+        A peek at the last six months. Full case studies, including the bits
+        that didn't work the first time, on request.
+      </p>
+    </div>
+
+    <div class="work-grid scene">
+      <a class="work-card wc-1 tilt" data-tilt data-tilt-max="7" href="#" aria-label="Halftime — brand campaign film">
+        <div class="wc-deco"></div>
+        <div class="meta">2025 · Brand film · Motion + edit</div>
+        <div class="title">Halftime — full reset campaign</div>
+      </a>
+      <a class="work-card wc-2 tilt" data-tilt data-tilt-max="7" href="#">
+        <div class="meta">2025 · Identity</div>
+        <div class="title">Marrow Coffee</div>
+      </a>
+      <a class="work-card wc-3 tilt" data-tilt data-tilt-max="7" href="#">
+        <div class="meta">2025 · Edit</div>
+        <div class="title">Sage podcast</div>
+      </a>
+      <a class="work-card wc-4 tilt" data-tilt data-tilt-max="7" href="#">
+        <div class="wc-deco"></div>
+        <div class="meta">2024 · Web · 14 pages</div>
+        <div class="title">Northwall — series A site</div>
+      </a>
+      <a class="work-card wc-5 tilt" data-tilt data-tilt-max="7" href="#">
+        <div class="meta">2024 · Motion</div>
+        <div class="title">Orbital · launch loop</div>
+      </a>
+      <a class="work-card wc-6 tilt" data-tilt data-tilt-max="7" href="#">
+        <div class="meta">2024 · Graphic</div>
+        <div class="title">Field guide '24</div>
+      </a>
+      <a class="work-card wc-7 tilt" data-tilt data-tilt-max="7" href="#">
+        <div class="wc-deco"></div>
+        <div class="meta">2024 · Editorial</div>
+        <div class="title">Issue 03 — print + web</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROCESS
+     ============================================================ -->
+<section class="section process" id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="section-tag">How we work / 03</span>
+        <h2>Four weeks.<br /><span class="stroke">No guesswork.</span></h2>
+      </div>
+      <p class="section-lede">
+        A small team and a tight loop. You'll know what's happening every Friday,
+        what we're shipping every other Wednesday, and where the budget sits in real time.
+      </p>
+    </div>
+
+    <div class="steps scene">
+      <div class="step">
+        <div class="step-num">Step 01</div>
+        <h3>Brief</h3>
+        <p>A 60-minute call, then a 1-page brief back. If it doesn't make sense in a page, it doesn't make sense yet.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">Step 02</div>
+        <h3>Sketch</h3>
+        <p>Two divergent directions, in low fidelity. We pick a winner together and kill the other before it gets pretty.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">Step 03</div>
+        <h3>Build</h3>
+        <p>Heads-down craft. One slack channel, one Loom every Wednesday, no surprise invoices, no scope creep.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">Step 04</div>
+        <h3>Ship</h3>
+        <p>Final files, source access, a launch-day checklist, and a thirty-day window to come back for tweaks at no charge.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONIALS
+     ============================================================ -->
+<section class="section testi" id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="section-tag">Words / 04</span>
+        <h2>Clients,<br /><span class="stroke">in their voice.</span></h2>
+      </div>
+      <p class="section-lede">
+        We have referenceable references. Email us — we'll connect you with any of these people.
+      </p>
+    </div>
+
+    <div class="testi-grid">
+      <div>
+        <div class="stars">★★★★★</div>
+        <p class="testi-quote">
+          "CRTR. shipped our launch film, the marketing site and the
+          <span class="red">whole identity rework</span> in six weeks.
+          They beat the deadline and our internal team's morale went up,
+          which I did not see coming."
+        </p>
+        <div class="testi-author">
+          <div class="testi-avatar">M</div>
+          <div class="testi-meta">
+            <div class="testi-name">Maya Okafor</div>
+            <div class="testi-role">VP Marketing · Northwall</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-side">
+        <div class="mini-testi">
+          <div class="stars">★★★★★</div>
+          <p>"They didn't try to redesign our brand from the inside out — they made it sharper without scaring our customers."</p>
+          <div class="who">— Reza A., founder · Marrow Coffee</div>
+        </div>
+        <div class="mini-testi">
+          <div class="stars">★★★★★</div>
+          <p>"Our YouTube retention is up 41% since they took over the cut. That's the whole testimonial."</p>
+          <div class="who">— Jenna L., creator · Sage Podcast</div>
+        </div>
+        <div class="mini-testi">
+          <div class="stars">★★★★★</div>
+          <p>"Asked for a logo. Got a logo, a packaging system, and an idea for our next product. Wild."</p>
+          <div class="who">— Owen B., COO · Orbital</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA
+     ============================================================ -->
+<section class="cta" id="contact">
+  <div class="cta-inner">
+    <h2>
+      Got a thing?<br />
+      <span class="stroke">Let's make it.</span>
+    </h2>
+    <p>
+      We take on six projects a quarter. Q3 has two slots open. Tell us what you're
+      working on — first reply in under a day.
+    </p>
+    <div class="hero-cta" style="justify-content:center">
+      <a href="mailto:hello@crtr.studio" class="btn btn-primary">
+        hello@crtr.studio
+        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#" class="btn btn-ghost">
+        Book a 20-min call
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <span class="brand-mark"><span>C.</span></span>
+          <span>CRTR.</span>
+        </div>
+        <p>A four-person creator studio working on video, motion, web and graphic design for ambitious teams worldwide.</p>
+        <div class="foot-socials">
+          <a class="soc" href="#" aria-label="Instagram">IG</a>
+          <a class="soc" href="#" aria-label="X / Twitter">X</a>
+          <a class="soc" href="#" aria-label="YouTube">YT</a>
+          <a class="soc" href="#" aria-label="Vimeo">VM</a>
+        </div>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#testimonials">Words</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press kit</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="mailto:hello@crtr.studio">hello@crtr.studio</a></li>
+          <li><a href="#">+1 (415) 555-0148</a></li>
+          <li><a href="#">Lisbon · NYC · Remote</a></li>
+          <li><a href="#contact" style="color:var(--red)">Start a project →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 CRTR. Creator Studio. All rights reserved.</span>
+      <span>Made on a Tuesday.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  // Pointer-tracked tilt for any [data-tilt] element
+  const tilts = document.querySelectorAll('[data-tilt]');
+  tilts.forEach(el => {
+    const max = parseFloat(el.dataset.tiltMax || '8');
+    let rect = null;
+    let raf = null;
+    const onMove = e => {
+      if (!rect) rect = el.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+      const rx = (0.5 - y) * max;
+      const ry = (x - 0.5) * max;
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const base = el.dataset.tiltBase || '';
+        el.style.transform = `${base} rotateX(${rx}deg) rotateY(${ry}deg)`;
+      });
+    };
+    const onLeave = () => {
+      rect = null;
+      const base = el.dataset.tiltBase || '';
+      el.style.transform = base;
+    };
+    const onEnter = () => { rect = el.getBoundingClientRect(); };
+    el.addEventListener('mouseenter', onEnter);
+    el.addEventListener('mousemove', onMove);
+    el.addEventListener('mouseleave', onLeave);
+  });
+
+  // Hero parallax — subtle motion on scroll + mouse
+  const hero = document.querySelector('.hero');
+  const mascot = document.querySelector('.mascot');
+  const heroH1 = document.querySelector('.hero h1');
+  if (hero && mascot) {
+    let baseRot = 4;
+    let mx = 0, my = 0;
+    hero.addEventListener('mousemove', e => {
+      const r = hero.getBoundingClientRect();
+      mx = (e.clientX - r.left) / r.width - 0.5;
+      my = (e.clientY - r.top) / r.height - 0.5;
+      mascot.style.transform = `rotate(${baseRot + mx * 4}deg) rotateY(${mx * -10}deg) rotateX(${my * 10}deg) translateZ(20px)`;
+      if (heroH1) {
+        heroH1.style.transform = `rotateY(${mx * 3}deg) rotateX(${my * -2}deg)`;
+      }
+    });
+    hero.addEventListener('mouseleave', () => {
+      mascot.style.transform = `rotate(${baseRot}deg)`;
+      if (heroH1) heroH1.style.transform = '';
+    });
+  }
+
+  // Scroll-driven 3D rotation on the marquee strip
+  const marquee = document.querySelector('.marquee-strip');
+  if (marquee) {
+    window.addEventListener('scroll', () => {
+      const r = marquee.getBoundingClientRect();
+      const center = (r.top + r.bottom) / 2;
+      const offset = (center - window.innerHeight / 2) / window.innerHeight;
+      marquee.style.transform = `perspective(1200px) rotateX(${Math.max(-12, Math.min(12, offset * 14))}deg)`;
+    }, { passive: true });
+  }
+})();
+</script>
+
+</body>
+</html>
