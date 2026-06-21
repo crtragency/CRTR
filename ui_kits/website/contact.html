@@ -205,14 +205,14 @@ function Ticker() {
 
 function PageHero() {
   return (
-    <section style={{ background:'var(--paper)', borderBottom:'1.5px solid var(--ink)', padding:'80px 0 72px' }}>
+    <section style={{ background:'var(--ink)', borderBottom:'1.5px solid var(--ink)', padding:'72px 0 64px' }}>
       <div className="kit-wrap">
-        <span className="kit-tag">Contact</span>
-        <h1 style={{ fontFamily:'var(--font-display)', fontSize:'clamp(56px,10vw,136px)', lineHeight:.88, letterSpacing:'-0.045em', textTransform:'uppercase', margin:'20px 0 0' }}>
-          <span style={{ display:'block', color:'var(--ink)' }}>Got a thing?</span>
+        <div style={{ fontFamily:'var(--font-mono)', fontSize:12, textTransform:'uppercase', letterSpacing:'.1em', color:'var(--red)' }}>/ Contact</div>
+        <h1 style={{ fontFamily:'var(--font-display)', fontSize:'clamp(36px,6.5vw,90px)', lineHeight:.88, letterSpacing:'-0.045em', textTransform:'uppercase', margin:'20px 0 0' }}>
+          <span style={{ display:'block', color:'var(--paper)' }}>Got a thing?</span>
           <span style={{ display:'block', color:'var(--red)' }}>{"Let's make it."}</span>
         </h1>
-        <p style={{ fontSize:17, color:'var(--muted)', lineHeight:1.65, maxWidth:520, marginTop:28 }}>
+        <p style={{ fontSize:17, color:'var(--muted-2)', lineHeight:1.65, maxWidth:520, marginTop:28 }}>
           Tell us what you are working on. First reply in under a day — usually a lot less. No forms-to-nowhere; a real person reads every one.
         </p>
       </div>
@@ -364,7 +364,7 @@ function ContactSection() {
             </div>
           </div>
         ) : (
-          <div style={{ maxWidth:660, margin:'0 auto' }}>
+          <div className="contact-2col">
             <div style={{ background:'var(--paper)', border:'1.5px solid var(--ink)', borderRadius:'var(--r-xl)', padding:40, boxShadow:'6px 6px 0 var(--ink)' }}>
               <div className="form-row" style={{ marginBottom:20 }}>
                 <Input label="Name" placeholder="Jane Maker"/>
@@ -382,6 +382,9 @@ function ContactSection() {
               <div style={{ display:'flex', justifyContent:'flex-end' }}>
                 <Button variant="primary" size="lg" onClick={() => setSent(true)}>Send brief</Button>
               </div>
+            </div>
+            <div style={{ position:'sticky', top:96 }}>
+              <SidebarCard/>
             </div>
           </div>
         )}
