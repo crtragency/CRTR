@@ -148,7 +148,7 @@ function ServiceTile({ num='01', title, children, tags=[], style, ...rest }) {
       style={{ display:'grid',gridTemplateColumns:'48px 1fr auto',gap:'20px',alignItems:'start',padding:'36px',background:h?'var(--ink)':'var(--paper)',color:h?'var(--paper)':'var(--ink)',border:'var(--bw) solid var(--ink)',borderRadius:'var(--r-lg)',transition:'background var(--dur-slow) var(--ease-ui),color var(--dur-slow) var(--ease-ui)',...style }} {...rest}>
       <div style={{ fontFamily:'var(--font-mono)',fontSize:'var(--fs-sm)',color:h?'var(--red)':'var(--muted)',paddingTop:6 }}>/ {num}</div>
       <div>
-        <h3 style={{ fontFamily:'var(--font-display)',fontSize:'var(--fs-h3)',lineHeight:1,letterSpacing:'var(--ls-display)',textTransform:'uppercase',margin:'0 0 12px',color:h?'var(--paper)':'var(--ink)',transition:'color var(--dur-slow) var(--ease-ui)' }}>{title}</h3>
+        <h3 style={{ fontFamily:'var(--font-display)',fontSize:'var(--fs-h3)',lineHeight:1,letterSpacing:'var(--ls-display)',textTransform:'uppercase',margin:'0 0 12px',color:h?'#ffffff':'var(--ink)',transition:'color var(--dur-slow) var(--ease-ui)' }}>{title}</h3>
         <p style={{ color:'inherit',opacity:0.78,fontSize:'var(--fs-body-sm)',margin:'0 0 18px',maxWidth:'38ch' }}>{children}</p>
         {tags.length>0&&<div style={{ display:'flex',flexWrap:'wrap',gap:'8px' }}>{tags.map(t=><Tag key={t}>{t}</Tag>)}</div>}
       </div>
@@ -294,7 +294,7 @@ const SVCS = [
   ['04','Graphic design',"Identity systems, packaging, social, print. We treat every grid like it's the last thing standing between you and your audience. Because it usually is.",['Identity','Packaging','Social','Print','Figma']],
 ];
 const STEPS = [
-  ['01','Brief','A 60-minute call, then a 1-page brief back. If it doesn't make sense in a page, it doesn't make sense yet.'],
+  ['01','Brief',"A 60-minute call, then a 1-page brief back. If it doesn't make sense in a page, it doesn't make sense yet."],
   ['02','Sketch','Two divergent directions, in low fidelity. We pick a winner together and kill the other before it gets pretty.'],
   ['03','Build','Heads-down craft. One Slack channel, one Loom every Wednesday, no surprise invoices, no scope creep.'],
   ['04','Ship','Final files, source access, a launch-day checklist, and a thirty-day window to come back for tweaks at no charge.'],

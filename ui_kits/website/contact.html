@@ -148,7 +148,7 @@ function ServiceTile({ num='01', title, children, tags=[], style, ...rest }) {
       style={{ display:'grid',gridTemplateColumns:'48px 1fr auto',gap:'20px',alignItems:'start',padding:'36px',background:h?'var(--ink)':'var(--paper)',color:h?'var(--paper)':'var(--ink)',border:'var(--bw) solid var(--ink)',borderRadius:'var(--r-lg)',transition:'background var(--dur-slow) var(--ease-ui),color var(--dur-slow) var(--ease-ui)',...style }} {...rest}>
       <div style={{ fontFamily:'var(--font-mono)',fontSize:'var(--fs-sm)',color:h?'var(--red)':'var(--muted)',paddingTop:6 }}>/ {num}</div>
       <div>
-        <h3 style={{ fontFamily:'var(--font-display)',fontSize:'var(--fs-h3)',lineHeight:1,letterSpacing:'var(--ls-display)',textTransform:'uppercase',margin:'0 0 12px',color:h?'var(--paper)':'var(--ink)',transition:'color var(--dur-slow) var(--ease-ui)' }}>{title}</h3>
+        <h3 style={{ fontFamily:'var(--font-display)',fontSize:'var(--fs-h3)',lineHeight:1,letterSpacing:'var(--ls-display)',textTransform:'uppercase',margin:'0 0 12px',color:h?'#ffffff':'var(--ink)',transition:'color var(--dur-slow) var(--ease-ui)' }}>{title}</h3>
         <p style={{ color:'inherit',opacity:0.78,fontSize:'var(--fs-body-sm)',margin:'0 0 18px',maxWidth:'38ch' }}>{children}</p>
         {tags.length>0&&<div style={{ display:'flex',flexWrap:'wrap',gap:'8px' }}>{tags.map(t=><Tag key={t}>{t}</Tag>)}</div>}
       </div>
@@ -288,11 +288,11 @@ function CtaBand({ onStart }) {
 /* ── PAGE SECTIONS ── */
 
 const FAQS = [
-  ['What's your typical project timeline?','Four weeks start to finish for most projects. Larger brand systems or multi-page sites can run 6–8 weeks. We'll tell you before we start, and we don't move the date.'],
+  ["What's your typical project timeline?","Four weeks start to finish for most projects. Larger brand systems or multi-page sites can run 6–8 weeks. We'll tell you before we start, and we don't move the date."],
   ['How much does a project cost?','Video and motion projects start around $4,000. Web projects from $8,000. Full brand systems from $12,000. We quote fixed-fee, not hourly.'],
-  ['Can I hire you for just one thing?','Yes. We're happy to do a single deliverable — a logo animation, a landing page, a one-minute film. You don't have to hand us the whole thing.'],
+  ["Can I hire you for just one thing?","Yes. We're happy to do a single deliverable — a logo animation, a landing page, a one-minute film. You don't have to hand us the whole thing."],
   ['Do you work with startups?','All the time. About half our clients are pre-Series A. We know how to move fast, scope tight, and deliver something real on a startup budget.'],
-  ['What's the first step?','Fill out the brief below or email hello@crtr.studio. We reply in under a day, usually a lot less.'],
+  ["What's the first step?",'Fill out the brief below or email hello@crtr.studio. We reply in under a day, usually a lot less.'],
 ];
 function FaqItem({ q, a }) {
   const [open,setOpen]=useState(false);
