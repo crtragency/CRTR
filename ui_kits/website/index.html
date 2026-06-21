@@ -237,7 +237,7 @@ function NavBar({ logoSrc, links = [], cta = 'Booking — Q3', ctaHref = '#', st
   return (
     <header style={{ position:'sticky', top:0, zIndex:50, background:'var(--paper)', borderBottom:'var(--bw) solid var(--ink)', ...style }} {...rest}>
       <div style={{ maxWidth:'var(--container)', margin:'0 auto', padding:'0 var(--gutter)', height:'var(--nav-h)', display:'flex', alignItems:'center', justifyContent:'space-between' }}>
-        <a href="index.html" aria-label="CRTR. Creator Studio"><BrandMark logoSrc={logoSrc} size={38} /></a>
+        <a href="index.html" aria-label="CRTR. Creative Agency"><BrandMark logoSrc={logoSrc} size={38} /></a>
         <nav aria-label="Main" style={{ display:'flex', gap:'36px', alignItems:'center' }}>
           {links.map(l => <NavLink key={l.label} href={l.href}>{l.label}</NavLink>)}
         </nav>
@@ -480,7 +480,7 @@ function Services() {
   return (
     <section id="services" className="kit-section">
       <div className="kit-wrap">
-        <SectionHead tag="Services 01" title={<>Four crafts.<br/><Stroke>One studio.</Stroke></>}
+        <SectionHead tag="Services 01" title={<>Four crafts.<br/><Stroke>One agency.</Stroke></>}
           lede="We work across the full surface of a brand — from the 6-second cut to the 300-page site. Pick the lane that fits, or hand us the whole thing." />
         <div className="svc-grid">
           {svc.map(([n,t,d,tags]) => <ServiceTile key={n} num={n} title={t} tags={tags}>{d}</ServiceTile>)}
@@ -520,14 +520,12 @@ function Work() {
 function StepCard({ n, t, d }) {
   const [h,setH]=useState(false);
   return (
-    <div className="step"
-      onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)}
-      style={{ background:h?'var(--red)':'transparent', transition:'background var(--dur-base) var(--ease-ui)', cursor:'default' }}>
-      <div style={{ fontFamily:'var(--font-mono)',fontSize:12,color:h?'rgba(255,255,255,.7)':'var(--muted-2)',letterSpacing:'.08em',display:'flex',alignItems:'center',gap:8,marginBottom:24,transition:'color var(--dur-base) var(--ease-ui)' }}>
-        <span style={{ width:24,height:1,background:h?'#fff':'var(--red)',display:'inline-block',transition:'background var(--dur-base) var(--ease-ui)' }}></span>Step {n}
+    <div className="step" onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)}>
+      <div style={{ fontFamily:'var(--font-mono)',fontSize:12,color:'var(--red)',letterSpacing:'.08em',display:'flex',alignItems:'center',gap:8,marginBottom:24 }}>
+        <span style={{ width:24,height:1,background:'var(--red)',display:'inline-block' }}></span>Step {n}
       </div>
-      <h3 style={{ fontFamily:'var(--font-display)',fontSize:26,letterSpacing:'-0.02em',textTransform:'uppercase',margin:'0 0 12px',color:'var(--paper)',transition:'color var(--dur-base) var(--ease-ui)' }}>{t}</h3>
-      <p style={{ color:h?'rgba(255,255,255,.85)':'var(--muted-2)',fontSize:14,lineHeight:1.55,transition:'color var(--dur-base) var(--ease-ui)' }}>{d}</p>
+      <h3 style={{ fontFamily:'var(--font-display)',fontSize:26,letterSpacing:'-0.02em',textTransform:'uppercase',margin:'0 0 12px',color:h?'var(--red)':'var(--paper)',transition:'color var(--dur-base) var(--ease-ui)' }}>{t}</h3>
+      <p style={{ color:'var(--muted-2)',fontSize:14,lineHeight:1.55 }}>{d}</p>
     </div>
   );
 }

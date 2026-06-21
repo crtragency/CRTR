@@ -148,7 +148,7 @@ function ServiceTile({ num='01', title, children, tags=[], style, ...rest }) {
       style={{ display:'grid',gridTemplateColumns:'48px 1fr auto',gap:'20px',alignItems:'start',padding:'36px',background:h?'var(--ink)':'var(--paper)',color:h?'var(--paper)':'var(--ink)',border:'var(--bw) solid var(--ink)',borderRadius:'var(--r-lg)',transition:'background var(--dur-slow) var(--ease-ui),color var(--dur-slow) var(--ease-ui)',...style }} {...rest}>
       <div style={{ fontFamily:'var(--font-mono)',fontSize:'var(--fs-sm)',color:h?'var(--red)':'var(--muted)',paddingTop:6 }}>/ {num}</div>
       <div>
-        <h3 style={{ fontFamily:'var(--font-display)',fontSize:'var(--fs-h3)',lineHeight:1,letterSpacing:'var(--ls-display)',textTransform:'uppercase',margin:'0 0 12px',color:'inherit' }}>{title}</h3>
+        <h3 style={{ fontFamily:'var(--font-display)',fontSize:'var(--fs-h3)',lineHeight:1,letterSpacing:'var(--ls-display)',textTransform:'uppercase',margin:'0 0 12px',color:h?'var(--paper)':'var(--ink)',transition:'color var(--dur-slow) var(--ease-ui)' }}>{title}</h3>
         <p style={{ color:'inherit',opacity:0.78,fontSize:'var(--fs-body-sm)',margin:'0 0 18px',maxWidth:'38ch' }}>{children}</p>
         {tags.length>0&&<div style={{ display:'flex',flexWrap:'wrap',gap:'8px' }}>{tags.map(t=><Tag key={t}>{t}</Tag>)}</div>}
       </div>

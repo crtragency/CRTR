@@ -148,7 +148,7 @@ function ServiceTile({ num='01', title, children, tags=[], style, ...rest }) {
       style={{ display:'grid',gridTemplateColumns:'48px 1fr auto',gap:'20px',alignItems:'start',padding:'36px',background:h?'var(--ink)':'var(--paper)',color:h?'var(--paper)':'var(--ink)',border:'var(--bw) solid var(--ink)',borderRadius:'var(--r-lg)',transition:'background var(--dur-slow) var(--ease-ui),color var(--dur-slow) var(--ease-ui)',...style }} {...rest}>
       <div style={{ fontFamily:'var(--font-mono)',fontSize:'var(--fs-sm)',color:h?'var(--red)':'var(--muted)',paddingTop:6 }}>/ {num}</div>
       <div>
-        <h3 style={{ fontFamily:'var(--font-display)',fontSize:'var(--fs-h3)',lineHeight:1,letterSpacing:'var(--ls-display)',textTransform:'uppercase',margin:'0 0 12px',color:'inherit' }}>{title}</h3>
+        <h3 style={{ fontFamily:'var(--font-display)',fontSize:'var(--fs-h3)',lineHeight:1,letterSpacing:'var(--ls-display)',textTransform:'uppercase',margin:'0 0 12px',color:h?'var(--paper)':'var(--ink)',transition:'color var(--dur-slow) var(--ease-ui)' }}>{title}</h3>
         <p style={{ color:'inherit',opacity:0.78,fontSize:'var(--fs-body-sm)',margin:'0 0 18px',maxWidth:'38ch' }}>{children}</p>
         {tags.length>0&&<div style={{ display:'flex',flexWrap:'wrap',gap:'8px' }}>{tags.map(t=><Tag key={t}>{t}</Tag>)}</div>}
       </div>
@@ -304,7 +304,7 @@ function PageHero() {
     <section className="page-hero">
       <div className="kit-wrap">
         <span className="kit-tag">Services</span>
-        <h1>Four crafts.<br/><Stroke>One studio.</Stroke></h1>
+        <h1>Four crafts.<br/><Stroke>One agency.</Stroke></h1>
         <p className="lede">We work across the full surface of a brand — video, motion, web and graphic. Pick one lane, or hand us the whole thing.</p>
       </div>
     </section>
@@ -324,14 +324,12 @@ function ServicesDetail() {
 function StepCard({ n, t, d }) {
   const [h,setH]=useState(false);
   return (
-    <div className="step"
-      onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)}
-      style={{ background:h?'var(--red)':'transparent', transition:'background var(--dur-base) var(--ease-ui)', cursor:'default' }}>
-      <div style={{ fontFamily:'var(--font-mono)',fontSize:12,color:h?'rgba(255,255,255,.7)':'var(--muted-2)',letterSpacing:'.08em',display:'flex',alignItems:'center',gap:8,marginBottom:24,transition:'color var(--dur-base) var(--ease-ui)' }}>
-        <span style={{ width:24,height:1,background:h?'#fff':'var(--red)',display:'inline-block',transition:'background var(--dur-base) var(--ease-ui)' }}></span>Step {n}
+    <div className="step" onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)}>
+      <div style={{ fontFamily:'var(--font-mono)',fontSize:12,color:'var(--red)',letterSpacing:'.08em',display:'flex',alignItems:'center',gap:8,marginBottom:24 }}>
+        <span style={{ width:24,height:1,background:'var(--red)',display:'inline-block' }}></span>Step {n}
       </div>
-      <h3 style={{ fontFamily:'var(--font-display)',fontSize:26,letterSpacing:'-0.02em',textTransform:'uppercase',margin:'0 0 12px',color:'var(--paper)',transition:'color var(--dur-base) var(--ease-ui)' }}>{t}</h3>
-      <p style={{ color:h?'rgba(255,255,255,.85)':'var(--muted-2)',fontSize:14,lineHeight:1.55,transition:'color var(--dur-base) var(--ease-ui)' }}>{d}</p>
+      <h3 style={{ fontFamily:'var(--font-display)',fontSize:26,letterSpacing:'-0.02em',textTransform:'uppercase',margin:'0 0 12px',color:h?'var(--red)':'var(--paper)',transition:'color var(--dur-base) var(--ease-ui)' }}>{t}</h3>
+      <p style={{ color:'var(--muted-2)',fontSize:14,lineHeight:1.55 }}>{d}</p>
     </div>
   );
 }
