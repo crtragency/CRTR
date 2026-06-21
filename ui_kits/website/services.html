@@ -148,7 +148,7 @@ function ServiceTile({ num='01', title, children, tags=[], style, ...rest }) {
       style={{ display:'grid',gridTemplateColumns:'48px 1fr auto',gap:'20px',alignItems:'start',padding:'36px',background:h?'var(--ink)':'var(--paper)',color:h?'var(--paper)':'var(--ink)',border:'var(--bw) solid var(--ink)',borderRadius:'var(--r-lg)',transition:'background var(--dur-slow) var(--ease-ui),color var(--dur-slow) var(--ease-ui)',...style }} {...rest}>
       <div style={{ fontFamily:'var(--font-mono)',fontSize:'var(--fs-sm)',color:h?'var(--red)':'var(--muted)',paddingTop:6 }}>/ {num}</div>
       <div>
-        <h3 style={{ fontFamily:'var(--font-display)',fontSize:'var(--fs-h3)',lineHeight:1,letterSpacing:'var(--ls-display)',textTransform:'uppercase',margin:'0 0 12px' }}>{title}</h3>
+        <h3 style={{ fontFamily:'var(--font-display)',fontSize:'var(--fs-h3)',lineHeight:1,letterSpacing:'var(--ls-display)',textTransform:'uppercase',margin:'0 0 12px',color:'inherit' }}>{title}</h3>
         <p style={{ color:'inherit',opacity:0.78,fontSize:'var(--fs-body-sm)',margin:'0 0 18px',maxWidth:'38ch' }}>{children}</p>
         {tags.length>0&&<div style={{ display:'flex',flexWrap:'wrap',gap:'8px' }}>{tags.map(t=><Tag key={t}>{t}</Tag>)}</div>}
       </div>
@@ -211,7 +211,7 @@ function Footer() {
         <div className="foot-grid">
           <div>
             <a href="index.html" style={{ display:'inline-block',marginBottom:16 }}><BrandMark logoSrc={LOGO} onInk size={40}/></a>
-            <p style={{ color:'var(--muted-2)',fontSize:14,lineHeight:1.6,maxWidth:300,marginBottom:20 }}>A four-person creator studio working on video, motion, web and graphic design for ambitious teams worldwide.</p>
+            <p style={{ color:'var(--muted-2)',fontSize:14,lineHeight:1.6,maxWidth:300,marginBottom:20 }}>A four-person creative agency working on video, motion, web and graphic design for ambitious teams worldwide.</p>
             <div style={{ display:'flex',gap:10 }}>{['IG','X','YT','VM'].map(s=><IconButton key={s} size={36} aria-label={s} style={{ background:'transparent',color:'var(--paper)',borderColor:'var(--ink-3)',fontSize:11,fontFamily:'var(--font-mono)' }}>{s}</IconButton>)}</div>
           </div>
           {cols.map(([h,links])=>(
@@ -224,7 +224,7 @@ function Footer() {
           ))}
         </div>
         <div style={{ borderTop:'1px solid var(--ink-3)',paddingTop:24,display:'flex',justifyContent:'space-between',flexWrap:'wrap',gap:16,fontFamily:'var(--font-mono)',fontSize:12,color:'var(--muted)',textTransform:'uppercase',letterSpacing:'.06em' }}>
-          <span>© 2026 CRTR. Creator Studio. All rights reserved.</span>
+          <span>© 2026 CRTR. Creative Agency. All rights reserved.</span>
           <span>Made on a Tuesday.</span>
         </div>
       </div>
@@ -329,7 +329,7 @@ function Process() {
         <div className="steps-grid">
           {STEPS.map(([n,t,d])=>(
             <div key={n} className="step">
-              <div style={{ fontFamily:'var(--font-mono)',fontSize:12,color:'var(--red)',letterSpacing:'.08em',display:'flex',alignItems:'center',gap:8,marginBottom:24 }}><span style={{ width:24,height:1,background:'var(--red)',display:'inline-block' }}></span>Step {n}</div>
+              <div style={{ fontFamily:'var(--font-mono)',fontSize:12,color:'var(--muted-2)',letterSpacing:'.08em',display:'flex',alignItems:'center',gap:8,marginBottom:24 }}><span style={{ width:24,height:1,background:'var(--red)',display:'inline-block' }}></span>Step {n}</div>
               <h3 style={{ fontFamily:'var(--font-display)',fontSize:26,letterSpacing:'-0.02em',textTransform:'uppercase',margin:'0 0 12px',color:'var(--paper)' }}>{t}</h3>
               <p style={{ color:'var(--muted-2)',fontSize:14,lineHeight:1.55 }}>{d}</p>
             </div>

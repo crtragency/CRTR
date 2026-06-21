@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CRTR. — Creator Studio</title>
+<title>CRTR. — Creative Agency</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,900&family=Archivo+Black&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -365,7 +365,7 @@ function Footer() {
         <div className="foot-grid">
           <div>
             <a href="index.html" style={{ display:'inline-block', marginBottom:16 }}><BrandMark logoSrc={LOGO} onInk size={40} /></a>
-            <p style={{ color:'var(--muted-2)', fontSize:14, lineHeight:1.6, maxWidth:300, marginBottom:20 }}>A four-person creator studio working on video, motion, web and graphic design for ambitious teams worldwide.</p>
+            <p style={{ color:'var(--muted-2)', fontSize:14, lineHeight:1.6, maxWidth:300, marginBottom:20 }}>A four-person creative agency working on video, motion, web and graphic design for ambitious teams worldwide.</p>
             <div style={{ display:'flex', gap:10 }}>
               {['IG','X','YT','VM'].map(s => (
                 <IconButton key={s} size={36} aria-label={s} style={{ background:'transparent', color:'var(--paper)', borderColor:'var(--ink-3)', fontSize:11, fontFamily:'var(--font-mono)' }}>{s}</IconButton>
@@ -382,7 +382,7 @@ function Footer() {
           ))}
         </div>
         <div style={{ borderTop:'1px solid var(--ink-3)', paddingTop:24, display:'flex', justifyContent:'space-between', flexWrap:'wrap', gap:16, fontFamily:'var(--font-mono)', fontSize:12, color:'var(--muted)', textTransform:'uppercase', letterSpacing:'.06em' }}>
-          <span>© 2026 CRTR. Creator Studio. All rights reserved.</span>
+          <span>© 2026 CRTR. Creative Agency. All rights reserved.</span>
           <span>Made on a Tuesday.</span>
         </div>
       </div>
@@ -437,7 +437,7 @@ function Hero({ onStart }) {
   return (
     <section style={{ borderBottom:'1.5px solid var(--ink)', overflow:'hidden' }}>
       <div className="hero-wrap">
-        <Badge tone="paper" dot>A creator-led studio · est. 2021</Badge>
+        <Badge tone="paper" dot>A creator-led agency · est. 2021</Badge>
         <h1 style={{ fontFamily:'var(--font-display)', fontSize:'clamp(56px,9vw,140px)', lineHeight:.92, letterSpacing:'-0.045em', textTransform:'uppercase', margin:'22px 0 0' }}>
           We make<br />
           <span style={{ color:'var(--red)' }}>brands</span> that<br />
@@ -446,7 +446,7 @@ function Hero({ onStart }) {
         </h1>
         <div className="hero-row">
           <p style={{ fontSize:20, lineHeight:1.45, color:'var(--ink-2)', maxWidth:520, fontWeight:500 }}>
-            CRTR. is a four-person creator studio shipping bold video, motion, web and graphic work for ambitious teams. No decks of decks — just the thing, made well, on time.
+            CRTR. is a four-person creative agency shipping bold video, motion, web and graphic work for ambitious teams. No decks of decks — just the thing, made well, on time.
           </p>
           <div className="hero-meta">
             {[['120+','Projects shipped',true],['38','Brands trust us',false],['4.9★','Avg. client rating',true]].map(([n,l,em]) => (
@@ -532,7 +532,7 @@ function Process() {
         <div className="steps-grid">
           {steps.map(([n,t,d]) => (
             <div key={n} className="step">
-              <div style={{ fontFamily:'var(--font-mono)', fontSize:12, color:'var(--red)', letterSpacing:'.08em', display:'flex', alignItems:'center', gap:8, marginBottom:24 }}>
+              <div style={{ fontFamily:'var(--font-mono)', fontSize:12, color:'var(--muted-2)', letterSpacing:'.08em', display:'flex', alignItems:'center', gap:8, marginBottom:24 }}>
                 <span style={{ width:24, height:1, background:'var(--red)', display:'inline-block' }}></span>Step {n}
               </div>
               <h3 style={{ fontFamily:'var(--font-display)', fontSize:26, letterSpacing:'-0.02em', textTransform:'uppercase', margin:'0 0 12px', color:'var(--paper)' }}>{t}</h3>
