@@ -94,8 +94,11 @@ p { margin:0; color:var(--text-2); line-height:var(--lh-body); }
 @media(max-width:540px){.foot-grid{grid-template-columns:1fr}}
 
 @keyframes crtr-marq { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+@keyframes crtr-wave1 { 0%,100%{transform:translate(0,0) scale(1)} 25%{transform:translate(60px,-50px) scale(1.08)} 50%{transform:translate(-30px,45px) scale(0.94)} 75%{transform:translate(50px,22px) scale(1.05)} }
+@keyframes crtr-wave2 { 0%,100%{transform:translate(0,0) scale(1)} 30%{transform:translate(-65px,38px) scale(1.1)} 60%{transform:translate(42px,-52px) scale(0.91)} 80%{transform:translate(-22px,-18px) scale(1.04)} }
+@keyframes crtr-wave3 { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(32px,-34px) scale(1.07)} 66%{transform:translate(-42px,22px) scale(0.95)} }
 .crtr-marquee-track:hover { animation-play-state:paused; }
-@media(prefers-reduced-motion:reduce){.crtr-marquee-track{animation:none!important}}
+@media(prefers-reduced-motion:reduce){.crtr-marquee-track,.crtr-blob{animation:none!important}}
 </style>
 </head>
 <body>
@@ -434,8 +437,12 @@ function ContactModal({ open, onClose }) {
 
 function Hero({ onStart }) {
   return (
-    <section style={{ borderBottom:'1.5px solid var(--ink)', overflow:'hidden', position:'relative', backgroundImage:'radial-gradient(rgba(11,11,12,.06) 1px, transparent 1px)', backgroundSize:'28px 28px' }}>
-      <div aria-hidden="true" style={{ position:'absolute', right:'-3%', bottom:0, fontFamily:'var(--font-display)', fontSize:'clamp(180px,30vw,480px)', lineHeight:.85, textTransform:'uppercase', color:'var(--ink)', opacity:.04, pointerEvents:'none', userSelect:'none' }}>CRTR.</div>
+    <section style={{ borderBottom:'1.5px solid var(--ink)', overflow:'hidden', position:'relative' }}>
+      <div aria-hidden="true" style={{ position:'absolute', inset:0, overflow:'hidden', pointerEvents:'none' }}>
+        <div className="crtr-blob" style={{ position:'absolute', width:820, height:640, top:'-18%', right:'-14%', background:'radial-gradient(ellipse, rgba(229,35,44,.30) 0%, rgba(229,35,44,.10) 42%, transparent 70%)', borderRadius:'50%', animation:'crtr-wave1 22s ease-in-out infinite', willChange:'transform' }}/>
+        <div className="crtr-blob" style={{ position:'absolute', width:600, height:520, bottom:'-28%', left:'-10%', background:'radial-gradient(ellipse, rgba(176,8,14,.22) 0%, rgba(229,35,44,.08) 48%, transparent 72%)', borderRadius:'50%', animation:'crtr-wave2 28s ease-in-out infinite', willChange:'transform' }}/>
+        <div className="crtr-blob" style={{ position:'absolute', width:420, height:400, top:'20%', left:'32%', background:'radial-gradient(ellipse, rgba(229,35,44,.16) 0%, transparent 65%)', borderRadius:'50%', animation:'crtr-wave3 18s ease-in-out infinite', willChange:'transform' }}/>
+      </div>
       {/* Eyebrow strip */}
       <div className="kit-wrap">
         <div className="hero-eyebrow">
