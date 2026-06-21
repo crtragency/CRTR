@@ -77,6 +77,8 @@ button{font-family:var(--font-sans)}
 .metric{padding:36px 32px;border-right:1.5px solid var(--ink)}
 .metric:last-child{border-right:none}
 @media(max-width:720px){.metric-strip{grid-template-columns:1fr 1fr}.metric:nth-child(2){border-right:none}.metric:nth-child(-n+2){border-bottom:1.5px solid var(--ink)}}
+/* ── hero grid ── */
+@media(max-width:700px){.hero-grid{grid-template-columns:1fr !important}}
 /* ── faq ── */
 .faq-new-item{border-bottom:1.5px solid var(--ink)}
 </style>
@@ -204,16 +206,22 @@ function PageHero() {
   return (
     <div>
       <Ticker/>
-      <section style={{ background:'var(--ink)', borderBottom:'1.5px solid var(--ink)', padding:'88px 0 80px', position:'relative', overflow:'hidden' }}>
+      <section style={{ background:'var(--ink)', borderBottom:'1.5px solid var(--ink)', padding:'48px 0 44px', position:'relative', overflow:'hidden' }}>
         <div style={{ position:'absolute', inset:0, backgroundImage:'radial-gradient(circle at 80% 50%, rgba(229,35,44,.08) 0%, transparent 60%)', pointerEvents:'none' }}/>
-        <div className="kit-wrap" style={{ position:'relative' }}>
-          <Badge tone="red" dot style={{ marginBottom:28 }}>Q3 2026 — 2 of 6 Slots Open</Badge>
-          <h1 style={{ fontFamily:'var(--font-display)', fontSize:'clamp(60px,11vw,148px)', lineHeight:.88, letterSpacing:'-0.045em', textTransform:'uppercase', color:'var(--paper)', margin:'0 0 32px', maxWidth:900 }}>
-            Let's make<br/><Stroke ink={false}>the thing.</Stroke>
+        <div className="kit-wrap hero-grid" style={{ position:'relative', display:'grid', gridTemplateColumns:'1fr 1fr', gap:'48px', alignItems:'center' }}>
+          <h1 style={{ fontFamily:'var(--font-display)', fontSize:'clamp(40px,6.5vw,88px)', lineHeight:.88, letterSpacing:'-0.045em', textTransform:'uppercase', color:'var(--paper)', margin:0 }}>
+            Let's make <Stroke ink={false}>the thing.</Stroke>
           </h1>
-          <p style={{ fontSize:20, color:'var(--muted-2)', maxWidth:520, lineHeight:1.6, fontWeight:500 }}>
-            Tell us what you're building. We reply to every brief in under 24 hours — usually a lot less.
-          </p>
+          <div style={{ display:'flex', flexDirection:'column', gap:18, alignItems:'flex-start' }}>
+            <Badge tone="red" dot>Q3 2026 — 2 of 6 Slots Open</Badge>
+            <p style={{ fontSize:17, color:'var(--muted-2)', lineHeight:1.65, maxWidth:400, margin:0 }}>
+              Tell us what you're building. We reply to every brief in under 24 hours — usually a lot less.
+            </p>
+            <div style={{ display:'flex', alignItems:'center', gap:8 }}>
+              <span style={{ width:6, height:6, borderRadius:'50%', background:'#22c55e', display:'inline-block', flexShrink:0 }}/>
+              <span style={{ fontFamily:'var(--font-mono)', fontSize:10, color:'var(--muted)', textTransform:'uppercase', letterSpacing:'.08em' }}>Currently accepting new projects</span>
+            </div>
+          </div>
         </div>
       </section>
     </div>
