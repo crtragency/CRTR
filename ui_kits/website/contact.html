@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/jpeg" href="./crtr-logo.jpg"/>
 <title>CRTR. — Contact</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -45,6 +46,7 @@ a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 h1,h2,h3,h4,h5,h6{margin:0;font-family:var(--font-display);font-weight:var(--fw-black);text-transform:uppercase;line-height:var(--lh-tight);letter-spacing:var(--ls-display);color:var(--text-1)}
 p{margin:0;color:var(--text-2);line-height:var(--lh-body)}
+button{font-family:var(--font-sans)}
 .kit-wrap{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
 @media(max-width:640px){.kit-wrap{padding:0 var(--gutter-sm)}}
 .kit-section{padding:120px 0;border-bottom:1.5px solid var(--ink)}
@@ -55,52 +57,28 @@ p{margin:0;color:var(--text-2);line-height:var(--lh-body)}
 @media(max-width:780px){.section-head{grid-template-columns:1fr;gap:24px}}
 .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 @media(max-width:780px){.svc-grid{grid-template-columns:1fr}}
-.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--ink-3);border-bottom:1px solid var(--ink-3)}
-.step{padding:36px 28px;border-right:1px solid var(--ink-3)}
-.step:last-child{border-right:none}
-@media(max-width:880px){.steps-grid{grid-template-columns:1fr 1fr}.step:nth-child(2){border-right:none}.step:nth-child(-n+2){border-bottom:1px solid var(--ink-3)}}
-@media(max-width:540px){.steps-grid{grid-template-columns:1fr}.step{border-right:none;border-bottom:1px solid var(--ink-3)}}
-.cta{padding:140px 0;background:var(--red);color:#fff;border-bottom:1.5px solid var(--ink);position:relative;overflow:hidden}
-.cta::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 28px,rgba(0,0,0,.06) 28px 29px);pointer-events:none}
-.cta-inner{position:relative;text-align:center;max-width:980px;margin:0 auto;padding:0 32px}
 .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:48px;margin-bottom:48px}
 @media(max-width:880px){.foot-grid{grid-template-columns:1fr 1fr;gap:36px}}
 @media(max-width:540px){.foot-grid{grid-template-columns:1fr}}
-/* ── page hero ── */
-.page-hero{padding:72px 0 64px;border-bottom:1.5px solid var(--ink);position:relative;overflow:hidden}
-.page-hero.on-ink{background:var(--ink)}
-.page-hero h1{font-family:var(--font-display);font-size:clamp(48px,8vw,116px);line-height:.92;letter-spacing:-0.045em;text-transform:uppercase;margin:18px 0 0}
-.page-hero .lede{font-size:20px;line-height:1.5;color:var(--ink-2);max-width:620px;margin:24px 0 0;font-weight:500}
-.page-hero.on-ink h1{color:var(--paper)}
-.page-hero.on-ink .lede{color:var(--muted-2)}
-/* ── work ── */
-.work-index{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-@media(max-width:780px){.work-index{grid-template-columns:1fr}}
-/* ── about ── */
-.stat-row{display:grid;grid-template-columns:repeat(4,1fr);border:1.5px solid var(--ink);border-radius:18px;overflow:hidden}
-.stat{padding:32px;border-right:1px solid var(--ink)}
-.stat:last-child{border-right:none}
-@media(max-width:680px){.stat-row{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:none}.stat:nth-child(-n+2){border-bottom:1px solid var(--ink)}}
-.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-@media(max-width:880px){.team-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:480px){.team-grid{grid-template-columns:1fr}}
-.logo-strip{display:grid;grid-template-columns:repeat(5,1fr);border:1.5px solid var(--ink);border-radius:18px;overflow:hidden}
-.logo-cell{padding:28px;display:grid;place-items:center;border-right:1px solid var(--ink);font-family:var(--font-display);text-transform:uppercase;letter-spacing:-0.02em;font-size:20px;color:var(--ink)}
-.logo-cell:last-child{border-right:none}
-@media(max-width:780px){.logo-strip{grid-template-columns:repeat(2,1fr)}.logo-cell{border-bottom:1px solid var(--ink)}}
-/* ── contact ── */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
-@media(max-width:880px){.contact-grid{grid-template-columns:1fr;gap:36px}}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:480px){.form-row{grid-template-columns:1fr}}
-.faq{border-top:1px solid var(--ink)}
-.faq-item{border-bottom:1px solid var(--ink);padding:24px 0}
-.faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer}
-.faq-q h4{font-family:var(--font-display);font-size:20px;text-transform:uppercase;letter-spacing:-0.01em;margin:0}
-.faq-a{color:var(--muted);font-size:15px;line-height:1.6;max-width:70ch;overflow:hidden;max-height:0;transition:max-height .35s var(--ease-out),margin .35s var(--ease-out)}
-.faq-item.open .faq-a{max-height:200px;margin-top:14px}
-.faq-item.open .faq-plus{transform:rotate(45deg)}
-.faq-plus{font-family:var(--font-mono);font-size:22px;color:var(--red);transition:transform .3s var(--ease-out);flex:none}
+/* ── marquee ── */
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+/* ── type grid ── */
+.type-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+@media(max-width:900px){.type-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.type-grid{grid-template-columns:1fr 1fr}}
+/* ── contact 2-col ── */
+.contact-2col{display:grid;grid-template-columns:1fr 380px;gap:64px;align-items:start}
+@media(max-width:1024px){.contact-2col{grid-template-columns:1fr;gap:48px}}
+/* ── metric strip ── */
+.metric-strip{display:grid;grid-template-columns:repeat(4,1fr);border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink)}
+.metric{padding:36px 32px;border-right:1.5px solid var(--ink)}
+.metric:last-child{border-right:none}
+@media(max-width:720px){.metric-strip{grid-template-columns:1fr 1fr}.metric:nth-child(2){border-right:none}.metric:nth-child(-n+2){border-bottom:1.5px solid var(--ink)}}
+/* ── faq ── */
+.faq-new-item{border-bottom:1.5px solid var(--ink)}
 </style>
 </head>
 <body>
@@ -137,27 +115,6 @@ function IconButton({ children, variant='outline', shape='circle', size=46, disa
   const El = href?'a':'button';
   return <El href={href} onClick={disabled?undefined:onClick} onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)} style={{ ...base,...variants[variant],...style }} {...rest}>{children}</El>;
 }
-function Card({ children, interactive=true, padding=24, style, ...rest }) {
-  const [h,setH]=useState(false);
-  return <div onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)} style={{ border:'var(--bw) solid var(--ink)',borderRadius:'var(--r-lg)',padding,background:'var(--paper)',color:'var(--ink)',transition:'transform var(--dur-base) var(--ease-out),box-shadow var(--dur-base) var(--ease-out)',boxShadow:interactive&&h?'var(--shadow-hard-lg)':'none',transform:interactive&&h?'var(--lift)':'none',...style }} {...rest}>{children}</div>;
-}
-function ServiceTile({ num='01', title, children, tags=[], style, ...rest }) {
-  const [h,setH]=useState(false);
-  return (
-    <div onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)}
-      style={{ display:'grid',gridTemplateColumns:'48px 1fr auto',gap:'20px',alignItems:'start',padding:'36px',background:h?'var(--ink)':'var(--paper)',color:h?'var(--paper)':'var(--ink)',border:'var(--bw) solid var(--ink)',borderRadius:'var(--r-lg)',transition:'background var(--dur-slow) var(--ease-ui),color var(--dur-slow) var(--ease-ui)',...style }} {...rest}>
-      <div style={{ fontFamily:'var(--font-mono)',fontSize:'var(--fs-sm)',color:h?'var(--red)':'var(--muted)',paddingTop:6 }}>/ {num}</div>
-      <div>
-        <h3 style={{ fontFamily:'var(--font-display)',fontSize:'var(--fs-h3)',lineHeight:1,letterSpacing:'var(--ls-display)',textTransform:'uppercase',margin:'0 0 12px',color:h?'#ffffff':'var(--ink)',transition:'color var(--dur-slow) var(--ease-ui)' }}>{title}</h3>
-        <p style={{ color:'inherit',opacity:0.78,fontSize:'var(--fs-body-sm)',margin:'0 0 18px',maxWidth:'38ch' }}>{children}</p>
-        {tags.length>0&&<div style={{ display:'flex',flexWrap:'wrap',gap:'8px' }}>{tags.map(t=><Tag key={t}>{t}</Tag>)}</div>}
-      </div>
-      <div style={{ width:46,height:46,borderRadius:'50%',display:'grid',placeItems:'center',background:h?'var(--red)':'var(--paper-2)',color:h?'var(--white)':'var(--ink)',border:`1px solid ${h?'var(--red)':'var(--ink)'}`,transform:h?'rotate(-45deg)':'none',transition:'all var(--dur-slow) var(--ease-out)' }}>
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M6 4h6v6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-      </div>
-    </div>
-  );
-}
 function BrandMark({ logoSrc, size=38, showWord=true, word='CRTR.', onInk=false, style, ...rest }) {
   const [err,setErr]=useState(false);
   return <span style={{ display:'inline-flex',alignItems:'center',gap:'12px',...style }} {...rest}><span style={{ width:size,height:size,borderRadius:'var(--r-sm)',background:'var(--red)',display:'grid',placeItems:'center',color:'#fff',fontFamily:'var(--font-display)',fontSize:size*0.37,border:'var(--bw) solid var(--ink)',boxShadow:onInk?'var(--shadow-hard-inv-sm)':'var(--shadow-hard-sm)',overflow:'hidden' }}>{logoSrc&&!err?<img src={logoSrc} alt="" onError={()=>setErr(true)} style={{ width:'100%',height:'100%',objectFit:'cover' }}/>:<span style={{ transform:'translateY(-1px)' }}>C.</span>}</span>{showWord&&<span style={{ fontFamily:'var(--font-display)',fontSize:size*0.53,letterSpacing:'-0.02em',color:onInk?'var(--paper)':'var(--ink)' }}>{word}</span>}</span>;
@@ -169,11 +126,6 @@ function NavLink({ href, children }) {
 function NavBar({ logoSrc, links=[], cta='Booking — Q3', ctaHref='#', style, ...rest }) {
   return <header style={{ position:'sticky',top:0,zIndex:50,background:'var(--paper)',borderBottom:'var(--bw) solid var(--ink)',...style }} {...rest}><div style={{ maxWidth:'var(--container)',margin:'0 auto',padding:'0 var(--gutter)',height:'var(--nav-h)',display:'flex',alignItems:'center',justifyContent:'space-between' }}><a href="index.html" aria-label="CRTR."><BrandMark logoSrc={logoSrc} size={38}/></a><nav style={{ display:'flex',gap:'36px',alignItems:'center' }}>{links.map(l=><NavLink key={l.label} href={l.href}>{l.label}</NavLink>)}</nav><a href={ctaHref}><Badge tone="ink" dot>{cta}</Badge></a></div></header>;
 }
-function WorkCard({ meta, title, tone='ink', href='#', style, ...rest }) {
-  const [h,setH]=useState(false);
-  const tones = { ink:{background:'var(--ink)',color:'#fff'}, red:{background:'var(--red)',color:'#fff'}, redGrad:{background:'linear-gradient(135deg,var(--red) 0%,var(--red-darker) 100%)',color:'#fff'}, darkGrad:{background:'linear-gradient(135deg,#0B0B0C 0%,#2a2a2d 100%)',color:'#fff'}, steel:{background:'var(--steel)',color:'#fff'}, gold:{background:'var(--gold)',color:'var(--ink)'}, paper:{background:'var(--paper-3)',color:'var(--ink)'} };
-  return <a href={href} onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)} style={{ position:'relative',display:'flex',flexDirection:'column',justifyContent:'flex-end',minHeight:200,border:'var(--bw) solid var(--ink)',borderRadius:'var(--r-lg)',overflow:'hidden',padding:22,transition:'transform var(--dur-slow) var(--ease-out),box-shadow var(--dur-slow) var(--ease-out)',boxShadow:h?'var(--shadow-hard-lg)':'none',transform:h?'var(--lift-lg)':'none',...tones[tone],...style }} {...rest}><div style={{ fontFamily:'var(--font-mono)',fontSize:'var(--fs-2xs)',textTransform:'uppercase',letterSpacing:'0.08em',opacity:0.85 }}>{meta}</div><div style={{ fontFamily:'var(--font-display)',fontSize:'22px',letterSpacing:'-0.02em',textTransform:'uppercase',marginTop:4,lineHeight:1 }}>{title}</div></a>;
-}
 function Input({ label, hint, error, type='text', id, style, ...rest }) {
   const [f,setF]=useState(false);
   const uid=id||(label?label.toLowerCase().replace(/\s+/g,'-'):undefined);
@@ -184,20 +136,11 @@ function Textarea({ label, hint, error, rows=4, id, style, ...rest }) {
   const uid=id||(label?label.toLowerCase().replace(/\s+/g,'-'):undefined);
   return <div style={{ display:'flex',flexDirection:'column',gap:'8px',width:'100%' }}>{label&&<label htmlFor={uid} style={{ fontFamily:'var(--font-mono)',fontSize:'var(--fs-2xs)',textTransform:'uppercase',letterSpacing:'var(--ls-eyebrow)',color:'var(--muted)' }}>{label}</label>}<textarea id={uid} rows={rows} onFocus={()=>setF(true)} onBlur={()=>setF(false)} style={{ fontFamily:'var(--font-sans)',fontSize:'var(--fs-body-sm)',lineHeight:'var(--lh-body)',color:'var(--ink)',background:'var(--white)',border:'var(--bw) solid var(--ink)',borderRadius:'var(--r-sm)',padding:'12px 14px',outline:'none',resize:'vertical',boxShadow:f?'var(--ring)':'none',transition:'box-shadow var(--dur-fast) var(--ease-ui)',width:'100%',...style }} {...rest}/>{(hint||error)&&<span style={{ fontSize:'var(--fs-2xs)',fontFamily:'var(--font-mono)',color:error?'var(--red)':'var(--muted)' }}>{error||hint}</span>}</div>;
 }
-
-/* ─── CHROME ─── */
-const NAV_LINKS = [
-  { label:'Work',     href:'work.html' },
-  { label:'Services', href:'services.html' },
-  { label:'Studio',   href:'about.html' },
-  { label:'Contact',  href:'contact.html' },
-];
-function SiteNav() { return <NavBar logoSrc={LOGO} links={NAV_LINKS} cta="Booking — Q3" ctaHref="contact.html"/>; }
-function SectionHead({ tag, title, lede, onInk }) {
-  return <div className="section-head"><div><span className="kit-tag">{tag}</span><h2 style={{ fontFamily:'var(--font-display)',fontSize:'clamp(40px,6vw,80px)',lineHeight:.95,letterSpacing:'-0.04em',textTransform:'uppercase',margin:'14px 0 0',color:onInk?'var(--paper)':'var(--ink)' }}>{title}</h2></div><p style={{ fontSize:18,color:onInk?'var(--muted-2)':'var(--muted)',maxWidth:480,lineHeight:1.55 }}>{lede}</p></div>;
-}
 function Stroke({ children, ink=true }) {
   return <span style={{ WebkitTextStroke:`1.5px var(--${ink?'ink':'paper'})`,color:'transparent' }}>{children}</span>;
+}
+function SectionHead({ tag, title, lede, onInk }) {
+  return <div className="section-head"><div><span className="kit-tag">{tag}</span><h2 style={{ fontFamily:'var(--font-display)',fontSize:'clamp(40px,6vw,80px)',lineHeight:.95,letterSpacing:'-0.04em',textTransform:'uppercase',margin:'14px 0 0',color:onInk?'var(--paper)':'var(--ink)' }}>{title}</h2></div><p style={{ fontSize:18,color:onInk?'var(--muted-2)':'var(--muted)',maxWidth:480,lineHeight:1.55 }}>{lede}</p></div>;
 }
 function Footer() {
   const cols = [
@@ -231,108 +174,207 @@ function Footer() {
     </footer>
   );
 }
-function ContactModal({ open, onClose }) {
-  const [sent,setSent]=useState(false);
-  useEffect(()=>{ if(open) setSent(false); },[open]);
-  if(!open) return null;
-  return (
-    <div onClick={onClose} style={{ position:'fixed',inset:0,background:'rgba(11,11,12,.55)',backdropFilter:'blur(4px)',display:'grid',placeItems:'center',zIndex:100,padding:20 }}>
-      <div onClick={e=>e.stopPropagation()} style={{ width:'min(520px,100%)',background:'var(--paper)',border:'2px solid var(--ink)',borderRadius:'var(--r-lg)',boxShadow:'8px 8px 0 var(--ink)',padding:32 }}>
-        {sent?(
-          <div style={{ textAlign:'center',padding:'24px 0' }}>
-            <div style={{ fontFamily:'var(--font-mono)',fontSize:12,color:'var(--red)',letterSpacing:'.1em',textTransform:'uppercase',marginBottom:12 }}>Brief received</div>
-            <h3 style={{ fontFamily:'var(--font-display)',fontSize:32,textTransform:'uppercase',letterSpacing:'-0.02em',margin:'0 0 12px' }}>Talk soon.</h3>
-            <p style={{ color:'var(--muted)',marginBottom:24 }}>First reply in under a day — usually a lot less.</p>
-            <Button variant="primary" onClick={onClose}>Close</Button>
-          </div>
-        ):(
-          <>
-            <div style={{ display:'flex',justifyContent:'space-between',alignItems:'flex-start',marginBottom:22 }}>
-              <div><span className="kit-tag">Start a project</span><h3 style={{ fontFamily:'var(--font-display)',fontSize:30,textTransform:'uppercase',letterSpacing:'-0.02em',margin:'10px 0 0' }}>Tell us the thing.</h3></div>
-              <IconButton variant="solid" shape="square" aria-label="Close" onClick={onClose} style={{ fontSize:14 }}>✕</IconButton>
-            </div>
-            <div style={{ display:'grid',gridTemplateColumns:'1fr 1fr',gap:16,marginBottom:16 }}>
-              <Input label="Name" placeholder="Jane Maker"/>
-              <Input label="Email" type="email" placeholder="you@studio.com"/>
-            </div>
-            <div style={{ marginBottom:20 }}><Textarea label="What are you making?" rows={3} placeholder="A launch film, a new site, a full rebrand…"/></div>
-            <div style={{ display:'flex',justifyContent:'flex-end',gap:12 }}>
-              <Button variant="ghost" onClick={onClose}>Cancel</Button>
-              <Button variant="primary" onClick={()=>setSent(true)}>Send brief</Button>
-            </div>
-          </>
-        )}
-      </div>
-    </div>
-  );
-}
-function CtaBand({ onStart }) {
-  return (
-    <section className="cta">
-      <div className="cta-inner">
-        <h2 style={{ fontFamily:'var(--font-display)',fontSize:'clamp(44px,7vw,96px)',lineHeight:.92,letterSpacing:'-0.04em',textTransform:'uppercase',margin:0,color:'#fff' }}>
-          Got a thing?<br/><Stroke ink={false}>Let's make it.</Stroke>
-        </h2>
-        <p style={{ fontSize:20,margin:'24px auto 36px',maxWidth:560,color:'rgba(255,255,255,.92)' }}>
-          We take on six projects a quarter. Q3 has two slots open. First reply in under a day.
-        </p>
-        <div style={{ display:'flex',gap:14,flexWrap:'wrap',justifyContent:'center' }}>
-          <Button variant="dark" onClick={onStart} style={{ borderColor:'#fff',boxShadow:'4px 4px 0 #fff' }}>Start a project</Button>
-          <Button variant="ghost" href="mailto:hello@crtr.studio" style={{ borderColor:'#fff',color:'#fff' }}>hello@crtr.studio</Button>
-        </div>
-      </div>
-    </section>
-  );
-}
+
+/* ─── CHROME ─── */
+const NAV_LINKS = [
+  { label:'Work',     href:'work.html' },
+  { label:'Services', href:'services.html' },
+  { label:'Studio',   href:'about.html' },
+  { label:'Contact',  href:'contact.html' },
+];
+function SiteNav() { return <NavBar logoSrc={LOGO} links={NAV_LINKS} cta="Booking — Q3" ctaHref="contact.html"/>; }
 
 /* ── PAGE SECTIONS ── */
 
-const FAQS = [
-  ["What's your typical project timeline?","Four weeks start to finish for most projects. Larger brand systems or multi-page sites can run 6–8 weeks. We'll tell you before we start, and we don't move the date."],
-  ['How much does a project cost?','Video and motion projects start around $4,000. Web projects from $8,000. Full brand systems from $12,000. We quote fixed-fee, not hourly.'],
-  ["Can I hire you for just one thing?","Yes. We're happy to do a single deliverable — a logo animation, a landing page, a one-minute film. You don't have to hand us the whole thing."],
-  ['Do you work with startups?','All the time. About half our clients are pre-Series A. We know how to move fast, scope tight, and deliver something real on a startup budget.'],
-  ["What's the first step?",'Fill out the brief below or email hello@crtr.studio. We reply in under a day, usually a lot less.'],
-];
-function FaqItem({ q, a }) {
-  const [open,setOpen]=useState(false);
+const TICKER_TEXT = 'Q3 2026  ·  2 SLOTS OPEN  ·  VIDEO  ·  MOTION  ·  WEB  ·  GRAPHIC DESIGN  ·  CRTR CREATIVE AGENCY  ·  REPLY IN UNDER 24H  ·  ';
+
+function Ticker() {
+  const repeated = TICKER_TEXT.repeat(6);
   return (
-    <div className={`faq-item${open?' open':''}`}>
-      <div className="faq-q" onClick={()=>setOpen(v=>!v)}>
-        <h4>{q}</h4>
-        <span className="faq-plus">+</span>
+    <div style={{ background:'var(--red)', borderBottom:'1.5px solid var(--ink)', overflow:'hidden', padding:'10px 0', position:'relative' }}>
+      <div style={{ display:'flex', whiteSpace:'nowrap', animation:'marquee 22s linear infinite' }}>
+        <span style={{ fontFamily:'var(--font-mono)', fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#fff' }}>{repeated}</span>
+        <span style={{ fontFamily:'var(--font-mono)', fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#fff' }}>{repeated}</span>
       </div>
-      <div className="faq-a">{a}</div>
     </div>
   );
 }
+
 function PageHero() {
   return (
-    <section className="page-hero">
-      <div className="kit-wrap">
-        <span className="kit-tag">Contact</span>
-        <h1>Let's make<br/><Stroke>the thing.</Stroke></h1>
-        <p className="lede">Two Q3 slots left. Tell us what you're building — we'll come back within a day with whether we're the right fit.</p>
-      </div>
-    </section>
+    <div>
+      <Ticker/>
+      <section style={{ background:'var(--ink)', borderBottom:'1.5px solid var(--ink)', padding:'88px 0 80px', position:'relative', overflow:'hidden' }}>
+        <div style={{ position:'absolute', inset:0, backgroundImage:'radial-gradient(circle at 80% 50%, rgba(229,35,44,.08) 0%, transparent 60%)', pointerEvents:'none' }}/>
+        <div className="kit-wrap" style={{ position:'relative' }}>
+          <Badge tone="red" dot style={{ marginBottom:28 }}>Q3 2026 — 2 of 6 Slots Open</Badge>
+          <h1 style={{ fontFamily:'var(--font-display)', fontSize:'clamp(60px,11vw,148px)', lineHeight:.88, letterSpacing:'-0.045em', textTransform:'uppercase', color:'var(--paper)', margin:'0 0 32px', maxWidth:900 }}>
+            Let's make<br/><Stroke ink={false}>the thing.</Stroke>
+          </h1>
+          <p style={{ fontSize:20, color:'var(--muted-2)', maxWidth:520, lineHeight:1.6, fontWeight:500 }}>
+            Tell us what you're building. We reply to every brief in under 24 hours — usually a lot less.
+          </p>
+        </div>
+      </section>
+    </div>
   );
 }
+
+const SERVICE_TYPES = [
+  { key:'video',   label:'Video',        sub:'YouTube · Ads · Films' },
+  { key:'motion',  label:'Motion',       sub:'Animation · Explainers' },
+  { key:'web',     label:'Web',          sub:'Sites · Landing pages' },
+  { key:'design',  label:'Design',       sub:'Identity · Packaging' },
+  { key:'all',     label:'Everything',   sub:'All four crafts' },
+];
+const BUDGET_OPTIONS = ['Under $5k', '$5–10k', '$10–25k', '$25–50k', '$50k+'];
+
+function TypePicker({ selected, onSelect }) {
+  return (
+    <div style={{ marginBottom:52 }}>
+      <div style={{ fontFamily:'var(--font-mono)', fontSize:11, textTransform:'uppercase', letterSpacing:'.1em', color:'var(--red)', marginBottom:16 }}>/ 01 — What type of project?</div>
+      <div className="type-grid">
+        {SERVICE_TYPES.map(({ key, label, sub }) => {
+          const active = selected === key;
+          const [hov, setHov] = useState(false);
+          const lit = active || hov;
+          return (
+            <button key={key} onClick={() => onSelect(active ? null : key)}
+              onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
+              style={{
+                background: active ? 'var(--red)' : hov ? 'var(--paper-2)' : 'var(--paper)',
+                color: active ? '#fff' : 'var(--ink)',
+                border: `var(--bw) solid ${active ? 'var(--red)' : 'var(--ink)'}`,
+                borderRadius: 'var(--r-md)',
+                padding: '20px 16px',
+                cursor: 'pointer',
+                textAlign: 'left',
+                transition: 'all var(--dur-base) var(--ease-ui)',
+                boxShadow: active ? 'var(--shadow-hard)' : 'none',
+                transform: active ? 'translate(-2px,-2px)' : 'none',
+              }}>
+              <div style={{ fontFamily:'var(--font-display)', fontSize:15, letterSpacing:'-0.01em', textTransform:'uppercase', marginBottom:5, lineHeight:1 }}>{label}</div>
+              <div style={{ fontFamily:'var(--font-mono)', fontSize:10, letterSpacing:'.05em', textTransform:'uppercase', opacity: active ? 0.85 : 0.55, lineHeight:1.3 }}>{sub}</div>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function BudgetPicker({ selected, onSelect }) {
+  return (
+    <div>
+      <label style={{ display:'block', fontFamily:'var(--font-mono)', fontSize:'var(--fs-2xs)', textTransform:'uppercase', letterSpacing:'var(--ls-eyebrow)', color:'var(--muted)', marginBottom:10 }}>Budget range (optional)</label>
+      <div style={{ display:'flex', flexWrap:'wrap', gap:8 }}>
+        {BUDGET_OPTIONS.map(b => {
+          const active = selected === b;
+          const [hov, setHov] = useState(false);
+          return (
+            <button key={b} onClick={() => onSelect(active ? null : b)}
+              onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
+              style={{
+                fontFamily:'var(--font-mono)', fontSize:11, textTransform:'uppercase', letterSpacing:'.06em',
+                padding:'8px 16px',
+                border: `1.5px solid ${active ? 'var(--red)' : hov ? 'var(--ink)' : 'var(--border-soft)'}`,
+                borderRadius:'var(--r-pill)',
+                cursor:'pointer',
+                background: active ? 'var(--red)' : hov ? 'var(--paper-2)' : 'transparent',
+                color: active ? '#fff' : 'var(--ink)',
+                transition:'all var(--dur-fast) var(--ease-ui)',
+              }}>{b}</button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function SidebarCard() {
+  const filled = 4; const total = 6; const open = total - filled;
+  return (
+    <div style={{ background:'var(--ink)', border:'1.5px solid var(--ink)', borderRadius:'var(--r-xl)', overflow:'hidden', boxShadow:'8px 8px 0 rgba(11,11,12,.18)' }}>
+      {/* Email */}
+      <div style={{ padding:'28px 28px 24px', borderBottom:'1px solid var(--ink-3)' }}>
+        <div style={{ fontFamily:'var(--font-mono)', fontSize:10, textTransform:'uppercase', letterSpacing:'.1em', color:'var(--red)', marginBottom:10 }}>Email us directly</div>
+        <a href="mailto:hello@crtr.studio" style={{ fontFamily:'var(--font-display)', fontSize:20, letterSpacing:'-0.02em', textTransform:'uppercase', color:'var(--paper)', display:'block', marginBottom:6, lineHeight:1.1 }}>hello@crtr.studio</a>
+        <span style={{ fontFamily:'var(--font-mono)', fontSize:10, color:'var(--muted-2)', letterSpacing:'.04em' }}>Reply guaranteed in under 24h</span>
+      </div>
+      {/* Slots */}
+      <div style={{ padding:'24px 28px', borderBottom:'1px solid var(--ink-3)' }}>
+        <div style={{ fontFamily:'var(--font-mono)', fontSize:10, textTransform:'uppercase', letterSpacing:'.1em', color:'var(--red)', marginBottom:14 }}>Q3 Availability</div>
+        <div style={{ display:'flex', gap:5, marginBottom:10 }}>
+          {[...Array(total)].map((_,i) => (
+            <div key={i} style={{ flex:1, height:5, borderRadius:3, background: i < filled ? 'var(--ink-3)' : 'var(--red)' }}/>
+          ))}
+        </div>
+        <div style={{ fontFamily:'var(--font-mono)', fontSize:11, color:'var(--muted-2)' }}>
+          <span style={{ color:'#fff', fontWeight:700 }}>{open} slots open</span> · {filled} of {total} taken
+        </div>
+      </div>
+      {/* Locations */}
+      <div style={{ padding:'24px 28px', borderBottom:'1px solid var(--ink-3)' }}>
+        <div style={{ fontFamily:'var(--font-mono)', fontSize:10, textTransform:'uppercase', letterSpacing:'.1em', color:'var(--red)', marginBottom:14 }}>Where we are</div>
+        <div style={{ display:'flex', flexDirection:'column', gap:10 }}>
+          {[['Lisbon, PT','GMT +1'],['New York, NY','GMT −5'],['Remote','Anywhere']].map(([city,tz]) => (
+            <div key={city} style={{ display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+              <span style={{ color:'var(--paper)', fontSize:14, fontWeight:500 }}>{city}</span>
+              <span style={{ fontFamily:'var(--font-mono)', fontSize:10, color:'var(--muted)', letterSpacing:'.04em' }}>{tz}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* Socials */}
+      <div style={{ padding:'20px 28px', borderBottom:'1px solid var(--ink-3)', display:'flex', gap:8 }}>
+        {[['IG','https://instagram.com'],['X','https://x.com'],['YT','https://youtube.com'],['VM','https://vimeo.com']].map(([s,href]) => (
+          <a key={s} href={href} style={{ width:34, height:34, borderRadius:6, border:'1px solid var(--ink-3)', display:'grid', placeItems:'center', fontFamily:'var(--font-mono)', fontSize:10, color:'var(--muted-2)', letterSpacing:'.04em', textDecoration:'none', transition:'all var(--dur-fast) var(--ease-ui)' }}
+            onMouseEnter={e=>{ e.currentTarget.style.borderColor='var(--red)'; e.currentTarget.style.color='var(--red)'; }}
+            onMouseLeave={e=>{ e.currentTarget.style.borderColor='var(--ink-3)'; e.currentTarget.style.color='var(--muted-2)'; }}>
+            {s}
+          </a>
+        ))}
+      </div>
+      {/* Testimonial */}
+      <div style={{ padding:'24px 28px' }}>
+        <div style={{ fontFamily:'var(--font-mono)', fontSize:10, textTransform:'uppercase', letterSpacing:'.1em', color:'var(--muted)', marginBottom:12 }}>A client said—</div>
+        <p style={{ color:'var(--muted-2)', fontSize:13, lineHeight:1.7, fontStyle:'italic', margin:'0 0 12px' }}>
+          "CRTR shipped our entire rebrand in four weeks — better than what we'd spent six months briefing another agency on."
+        </p>
+        <div style={{ fontFamily:'var(--font-mono)', fontSize:10, color:'var(--muted)', textTransform:'uppercase', letterSpacing:'.06em' }}>— Maya R., Founder · Vanta Studio</div>
+      </div>
+    </div>
+  );
+}
+
 function ContactSection() {
-  const [sent,setSent]=useState(false);
+  const [type, setType] = useState(null);
+  const [budget, setBudget] = useState(null);
+  const [sent, setSent] = useState(false);
   return (
     <section className="kit-section">
       <div className="kit-wrap">
-        <div className="contact-grid">
-          <div>
-            {sent?(
-              <div style={{ padding:'40px 0' }}>
-                <div style={{ fontFamily:'var(--font-mono)',fontSize:12,color:'var(--red)',letterSpacing:'.1em',textTransform:'uppercase',marginBottom:12 }}>Brief received</div>
-                <h3 style={{ fontFamily:'var(--font-display)',fontSize:'clamp(32px,4vw,48px)',textTransform:'uppercase',letterSpacing:'-0.02em',margin:'0 0 16px' }}>Talk soon.</h3>
-                <p style={{ color:'var(--muted)',fontSize:17 }}>First reply in under a day — usually a lot less.</p>
-              </div>
-            ):(
-              <>
-                <h3 style={{ fontFamily:'var(--font-display)',fontSize:28,textTransform:'uppercase',letterSpacing:'-0.02em',margin:'0 0 28px' }}>Start a project</h3>
+        {sent ? (
+          <div style={{ textAlign:'center', padding:'80px 0', maxWidth:640, margin:'0 auto' }}>
+            <div style={{ fontFamily:'var(--font-mono)', fontSize:11, color:'var(--red)', letterSpacing:'.1em', textTransform:'uppercase', marginBottom:20 }}>/ Brief received</div>
+            <h2 style={{ fontFamily:'var(--font-display)', fontSize:'clamp(56px,9vw,120px)', lineHeight:.88, letterSpacing:'-0.045em', textTransform:'uppercase', margin:'0 0 28px' }}>
+              Talk<br/><Stroke>soon.</Stroke>
+            </h2>
+            <p style={{ fontSize:18, color:'var(--muted)', marginBottom:40, lineHeight:1.6 }}>
+              First reply in under a day — usually a lot less. Check your inbox.
+            </p>
+            <div style={{ display:'flex', gap:12, justifyContent:'center', flexWrap:'wrap' }}>
+              <Button variant="dark" href="index.html">Back to home</Button>
+              <Button variant="ghost" href="work.html">See our work</Button>
+            </div>
+          </div>
+        ) : (
+          <>
+            <TypePicker selected={type} onSelect={setType}/>
+            <div className="contact-2col">
+              {/* Form */}
+              <div>
+                <div style={{ fontFamily:'var(--font-mono)', fontSize:11, textTransform:'uppercase', letterSpacing:'.1em', color:'var(--red)', marginBottom:24 }}>/ 02 — Tell us about it</div>
                 <div className="form-row" style={{ marginBottom:16 }}>
                   <Input label="Name" placeholder="Jane Maker"/>
                   <Input label="Email" type="email" placeholder="you@studio.com"/>
@@ -340,37 +382,86 @@ function ContactSection() {
                 <div style={{ marginBottom:16 }}>
                   <Input label="Company / project" placeholder="Acme Inc."/>
                 </div>
-                <div style={{ marginBottom:16 }}>
-                  <Textarea label="What are you making?" rows={4} placeholder="A launch film, a new site, a full rebrand — give us the rough shape of the thing."/>
-                </div>
                 <div style={{ marginBottom:24 }}>
-                  <Textarea label="Budget range (optional)" rows={2} placeholder="$5k–$10k, $10k–$25k, bigger…"/>
+                  <Textarea label="What are you making?" rows={5} placeholder="Describe the project — scale, timeline, what success looks like for you."/>
                 </div>
-                <Button variant="primary" onClick={()=>setSent(true)} size="lg">Send brief</Button>
-              </>
-            )}
-          </div>
-          <div>
-            <div style={{ marginBottom:40 }}>
-              <div style={{ fontFamily:'var(--font-mono)',fontSize:11,textTransform:'uppercase',letterSpacing:'.1em',color:'var(--red)',marginBottom:12 }}>Email</div>
-              <a href="mailto:hello@crtr.studio" style={{ fontSize:22,fontWeight:700,color:'var(--ink)',textDecoration:'none' }}>hello@crtr.studio</a>
+                <div style={{ marginBottom:36 }}>
+                  <BudgetPicker selected={budget} onSelect={setBudget}/>
+                </div>
+                <div style={{ display:'flex', alignItems:'center', gap:20, flexWrap:'wrap' }}>
+                  <Button variant="primary" size="lg" onClick={() => setSent(true)}>Send brief</Button>
+                  <div style={{ display:'flex', alignItems:'center', gap:8 }}>
+                    <span style={{ width:6, height:6, borderRadius:'50%', background:'#22c55e', display:'inline-block' }}/>
+                    <span style={{ fontFamily:'var(--font-mono)', fontSize:11, color:'var(--muted)', textTransform:'uppercase', letterSpacing:'.06em' }}>Reply in &lt; 24h</span>
+                  </div>
+                </div>
+              </div>
+              {/* Sidebar */}
+              <div style={{ position:'sticky', top:96 }}>
+                <SidebarCard/>
+              </div>
             </div>
-            <div style={{ marginBottom:40 }}>
-              <div style={{ fontFamily:'var(--font-mono)',fontSize:11,textTransform:'uppercase',letterSpacing:'.1em',color:'var(--red)',marginBottom:12 }}>Availability</div>
-              <Badge tone="ink" dot>Booking — Q3 · 2 slots open</Badge>
+          </>
+        )}
+      </div>
+    </section>
+  );
+}
+
+function TrustStrip() {
+  const metrics = [
+    { val:'47',     label:'Projects delivered', sub:'Since 2021' },
+    { val:'4 wks',  label:'Average timeline',   sub:'Start to ship' },
+    { val:'$0',     label:'Surprise invoices',  sub:'Fixed-fee always' },
+    { val:'18',     label:'Countries',          sub:'Where our work lives' },
+  ];
+  return (
+    <section style={{ borderBottom:'1.5px solid var(--ink)' }}>
+      <div className="kit-wrap" style={{ padding:0 }}>
+        <div className="metric-strip">
+          {metrics.map(({ val, label, sub }) => (
+            <div key={label} className="metric">
+              <div style={{ fontFamily:'var(--font-display)', fontSize:'clamp(28px,3.5vw,48px)', lineHeight:.9, letterSpacing:'-0.03em', textTransform:'uppercase', color:'var(--ink)', marginBottom:10 }}>{val}</div>
+              <div style={{ fontWeight:600, fontSize:15, color:'var(--ink)', marginBottom:4 }}>{label}</div>
+              <div style={{ fontFamily:'var(--font-mono)', fontSize:10, color:'var(--muted)', textTransform:'uppercase', letterSpacing:'.06em' }}>{sub}</div>
             </div>
-            <div style={{ marginBottom:40 }}>
-              <div style={{ fontFamily:'var(--font-mono)',fontSize:11,textTransform:'uppercase',letterSpacing:'.1em',color:'var(--red)',marginBottom:12 }}>Based in</div>
-              <p style={{ fontSize:16,color:'var(--muted)' }}>Lisbon · New York City · Remote</p>
-            </div>
-            <div style={{ padding:24,border:'var(--bw) solid var(--ink)',borderRadius:'var(--r-lg)',background:'var(--ink)',color:'var(--paper)' }}>
-              <div style={{ fontFamily:'var(--font-mono)',fontSize:11,textTransform:'uppercase',letterSpacing:'.1em',color:'var(--red)',marginBottom:12 }}>Response time</div>
-              <p style={{ fontSize:15,lineHeight:1.55,color:'var(--muted-2)' }}>We reply to every brief within 24 hours. Usually faster. If you don't hear back, check your spam — our emails occasionally get shy.</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
+  );
+}
+
+const FAQS = [
+  ["What's your typical project timeline?", "Four weeks start to finish for most projects. Larger brand systems or multi-page sites can run 6–8 weeks. We'll tell you before we start, and we don't move the date."],
+  ["How much does a project cost?", "Video and motion projects start around $4,000. Web projects from $8,000. Full brand systems from $12,000. We quote fixed-fee, not hourly."],
+  ["Can I hire you for just one thing?", "Yes. We're happy to do a single deliverable — a logo animation, a landing page, a one-minute film. You don't have to hand us the whole thing."],
+  ["Do you work with startups?", "All the time. About half our clients are pre-Series A. We know how to move fast, scope tight, and deliver something real on a startup budget."],
+  ["What's the first step?", "Fill out the brief above or email hello@crtr.studio. We reply in under a day, usually a lot less."],
+];
+function FaqItem({ n, q, a }) {
+  const [open, setOpen] = useState(false);
+  const [hov, setHov] = useState(false);
+  return (
+    <div className="faq-new-item">
+      <button
+        onClick={() => setOpen(v => !v)}
+        onMouseEnter={() => setHov(true)}
+        onMouseLeave={() => setHov(false)}
+        style={{
+          width:'100%', background:'none', border:'none',
+          padding:'26px 0', cursor:'pointer',
+          display:'grid', gridTemplateColumns:'56px 1fr 44px',
+          gap:'12px', alignItems:'center', textAlign:'left',
+        }}>
+        <span style={{ fontFamily:'var(--font-mono)', fontSize:12, color:open?'var(--red)':'var(--muted)', letterSpacing:'.06em', transition:'color var(--dur-base) var(--ease-ui)' }}>{String(n).padStart(2,'0')}</span>
+        <h4 style={{ fontFamily:'var(--font-display)', fontSize:'clamp(16px,1.8vw,22px)', textTransform:'uppercase', letterSpacing:'-0.01em', margin:0, color:(open||hov)?'var(--red)':'var(--ink)', transition:'color var(--dur-base) var(--ease-ui)' }}>{q}</h4>
+        <span style={{ fontFamily:'var(--font-mono)', fontSize:24, color:'var(--red)', transform:open?'rotate(45deg)':'none', transition:'transform .3s var(--ease-out)', display:'block', textAlign:'center', lineHeight:1 }}>+</span>
+      </button>
+      <div style={{ overflow:'hidden', maxHeight:open?240:0, transition:'max-height .4s var(--ease-out)', paddingLeft:68 }}>
+        <p style={{ fontSize:15, color:'var(--muted)', lineHeight:1.7, paddingBottom:26 }}>{a}</p>
+      </div>
+    </div>
   );
 }
 function Faq() {
@@ -378,15 +469,16 @@ function Faq() {
     <section className="kit-section">
       <div className="kit-wrap">
         <SectionHead tag="FAQ" title={<>Questions,<br/><Stroke>answered.</Stroke></>} lede="The ones we get every time. If yours isn't here, just email us."/>
-        <div className="faq">
-          {FAQS.map(([q,a])=><FaqItem key={q} q={q} a={a}/>)}
+        <div style={{ borderTop:'1.5px solid var(--ink)' }}>
+          {FAQS.map(([q,a],i) => <FaqItem key={q} n={i+1} q={q} a={a}/>)}
         </div>
       </div>
     </section>
   );
 }
+
 function App() {
-  return <><SiteNav/><PageHero/><ContactSection/><Faq/><Footer/></>;
+  return <><SiteNav/><PageHero/><ContactSection/><TrustStrip/><Faq/><Footer/></>;
 }
 ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
 </script>
