@@ -517,6 +517,21 @@ function Work() {
   );
 }
 
+function StepCard({ n, t, d }) {
+  const [h,setH]=useState(false);
+  return (
+    <div className="step"
+      onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)}
+      style={{ background:h?'var(--red)':'transparent', transition:'background var(--dur-base) var(--ease-ui)', cursor:'default' }}>
+      <div style={{ fontFamily:'var(--font-mono)',fontSize:12,color:h?'rgba(255,255,255,.7)':'var(--muted-2)',letterSpacing:'.08em',display:'flex',alignItems:'center',gap:8,marginBottom:24,transition:'color var(--dur-base) var(--ease-ui)' }}>
+        <span style={{ width:24,height:1,background:h?'#fff':'var(--red)',display:'inline-block',transition:'background var(--dur-base) var(--ease-ui)' }}></span>Step {n}
+      </div>
+      <h3 style={{ fontFamily:'var(--font-display)',fontSize:26,letterSpacing:'-0.02em',textTransform:'uppercase',margin:'0 0 12px',color:'var(--paper)',transition:'color var(--dur-base) var(--ease-ui)' }}>{t}</h3>
+      <p style={{ color:h?'rgba(255,255,255,.85)':'var(--muted-2)',fontSize:14,lineHeight:1.55,transition:'color var(--dur-base) var(--ease-ui)' }}>{d}</p>
+    </div>
+  );
+}
+
 function Process() {
   const steps = [
     ['01','Brief','A 60-minute call, then a 1-page brief back. If it doesn\'t make sense in a page, it doesn\'t make sense yet.'],
@@ -530,15 +545,7 @@ function Process() {
         <SectionHead onInk tag="How we work 03" title={<>Four weeks.<br/><Stroke ink={false}>No guesswork.</Stroke></>}
           lede="A small team and a tight loop. You'll know what's happening every Friday and where the budget sits in real time." />
         <div className="steps-grid">
-          {steps.map(([n,t,d]) => (
-            <div key={n} className="step">
-              <div style={{ fontFamily:'var(--font-mono)', fontSize:12, color:'var(--muted-2)', letterSpacing:'.08em', display:'flex', alignItems:'center', gap:8, marginBottom:24 }}>
-                <span style={{ width:24, height:1, background:'var(--red)', display:'inline-block' }}></span>Step {n}
-              </div>
-              <h3 style={{ fontFamily:'var(--font-display)', fontSize:26, letterSpacing:'-0.02em', textTransform:'uppercase', margin:'0 0 12px', color:'var(--paper)' }}>{t}</h3>
-              <p style={{ color:'var(--muted-2)', fontSize:14, lineHeight:1.55 }}>{d}</p>
-            </div>
-          ))}
+          {steps.map(([n,t,d]) => <StepCard key={n} n={n} t={t} d={d}/>)}
         </div>
       </div>
     </section>
