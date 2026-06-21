@@ -433,7 +433,8 @@ function ContactModal({ open, onClose }) {
 
 function Hero({ onStart }) {
   return (
-    <section style={{ borderBottom:'1.5px solid var(--ink)', overflow:'hidden' }}>
+    <section style={{ borderBottom:'1.5px solid var(--ink)', overflow:'hidden', position:'relative', backgroundImage:'radial-gradient(rgba(11,11,12,.06) 1px, transparent 1px)', backgroundSize:'28px 28px' }}>
+      <div aria-hidden="true" style={{ position:'absolute', right:'-3%', bottom:0, fontFamily:'var(--font-display)', fontSize:'clamp(180px,30vw,480px)', lineHeight:.85, textTransform:'uppercase', color:'var(--ink)', opacity:.04, pointerEvents:'none', userSelect:'none' }}>CRTR.</div>
       {/* Eyebrow strip */}
       <div className="kit-wrap">
         <div className="hero-eyebrow">
@@ -452,7 +453,7 @@ function Hero({ onStart }) {
       {/* Headline */}
       <div className="kit-wrap">
         <div className="hero-headline">
-          <h1 style={{ fontFamily:'var(--font-display)', fontSize:'clamp(68px,11vw,158px)', lineHeight:.88, letterSpacing:'-0.045em', textTransform:'uppercase', margin:0 }}>
+          <h1 style={{ fontFamily:'var(--font-display)', fontSize:'clamp(48px,8vw,112px)', lineHeight:.88, letterSpacing:'-0.045em', textTransform:'uppercase', margin:0 }}>
             <span style={{ display:'block', color:'var(--ink)' }}>We make</span>
             <span style={{ display:'block' }}>
               <span style={{ color:'var(--red)' }}>brands</span>

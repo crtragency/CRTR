@@ -65,6 +65,7 @@ button{font-family:var(--font-sans)}
 /* ── marquee ── */
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-3px)}40%{transform:translateX(3px)}60%{transform:translateX(-2px)}80%{transform:translateX(2px)}}
 /* ── type grid ── */
 .type-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
 @media(max-width:900px){.type-grid{grid-template-columns:repeat(3,1fr)}}
@@ -240,14 +241,13 @@ const BUDGET_OPTIONS = ['Under $5k', '$5–10k', '$10–25k', '$25–50k', '$50k
 function TypePicker({ selected, onSelect }) {
   return (
     <div style={{ marginBottom:52 }}>
-      <div style={{ fontFamily:'var(--font-mono)', fontSize:11, textTransform:'uppercase', letterSpacing:'.1em', color:'var(--red)', marginBottom:16 }}>/ 01 — What type of project?</div>
+      <div style={{ fontFamily:'var(--font-mono)', fontSize:11, textTransform:'uppercase', letterSpacing:'.1em', color:'var(--red)', marginBottom:16 }}>/ 01 — What type of project? <span style={{ opacity:.5, textTransform:'none', letterSpacing:0 }}>(pick all that apply)</span></div>
       <div className="type-grid">
         {SERVICE_TYPES.map(({ key, label, sub }) => {
-          const active = selected === key;
+          const active = selected.includes(key);
           const [hov, setHov] = useState(false);
-          const lit = active || hov;
           return (
-            <button key={key} onClick={() => onSelect(active ? null : key)}
+            <button key={key} onClick={() => onSelect(key)}
               onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
               style={{
                 background: active ? 'var(--red)' : hov ? 'var(--paper-2)' : 'var(--paper)',
@@ -356,7 +356,7 @@ function SidebarCard() {
 }
 
 function ContactSection() {
-  const [type, setType] = useState(null);
+  const [types, setTypes] = useState([]);
   const [budget, setBudget] = useState(null);
   const [sent, setSent] = useState(false);
   return (
@@ -378,7 +378,7 @@ function ContactSection() {
           </div>
         ) : (
           <>
-            <TypePicker selected={type} onSelect={setType}/>
+            <TypePicker selected={types} onSelect={key => setTypes(prev => prev.includes(key) ? prev.filter(k=>k!==key) : [...prev, key])}/>
             <div className="contact-2col">
               {/* Form */}
               <div>
@@ -416,6 +416,25 @@ function ContactSection() {
   );
 }
 
+function MetricCard({ val, label, sub }) {
+  const [hov, setHov] = useState(false);
+  return (
+    <div className="metric"
+      onMouseEnter={() => setHov(true)}
+      onMouseLeave={() => setHov(false)}
+      style={{
+        background: hov ? 'var(--ink)' : 'transparent',
+        transition: 'background var(--dur-base) var(--ease-ui)',
+        animation: hov ? 'shake 0.45s ease-in-out' : 'none',
+        cursor: 'default',
+      }}>
+      <div style={{ fontFamily:'var(--font-display)', fontSize:'clamp(28px,3.5vw,48px)', lineHeight:.9, letterSpacing:'-0.03em', textTransform:'uppercase', color: hov ? 'var(--red)' : 'var(--ink)', marginBottom:10, transition:'color var(--dur-base) var(--ease-ui)' }}>{val}</div>
+      <div style={{ fontWeight:600, fontSize:15, color: hov ? 'var(--paper)' : 'var(--ink)', marginBottom:4, transition:'color var(--dur-base) var(--ease-ui)' }}>{label}</div>
+      <div style={{ fontFamily:'var(--font-mono)', fontSize:10, color: hov ? 'var(--muted-2)' : 'var(--muted)', textTransform:'uppercase', letterSpacing:'.06em', transition:'color var(--dur-base) var(--ease-ui)' }}>{sub}</div>
+    </div>
+  );
+}
+
 function TrustStrip() {
   const metrics = [
     { val:'47',     label:'Projects delivered', sub:'Since 2021' },
@@ -427,13 +446,7 @@ function TrustStrip() {
     <section style={{ borderBottom:'1.5px solid var(--ink)' }}>
       <div className="kit-wrap" style={{ padding:0 }}>
         <div className="metric-strip">
-          {metrics.map(({ val, label, sub }) => (
-            <div key={label} className="metric">
-              <div style={{ fontFamily:'var(--font-display)', fontSize:'clamp(28px,3.5vw,48px)', lineHeight:.9, letterSpacing:'-0.03em', textTransform:'uppercase', color:'var(--ink)', marginBottom:10 }}>{val}</div>
-              <div style={{ fontWeight:600, fontSize:15, color:'var(--ink)', marginBottom:4 }}>{label}</div>
-              <div style={{ fontFamily:'var(--font-mono)', fontSize:10, color:'var(--muted)', textTransform:'uppercase', letterSpacing:'.06em' }}>{sub}</div>
-            </div>
-          ))}
+          {metrics.map(m => <MetricCard key={m.label} {...m}/>)}
         </div>
       </div>
     </section>
