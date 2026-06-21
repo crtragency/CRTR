@@ -94,11 +94,9 @@ p { margin:0; color:var(--text-2); line-height:var(--lh-body); }
 @media(max-width:540px){.foot-grid{grid-template-columns:1fr}}
 
 @keyframes crtr-marq { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-@keyframes crtr-wave1 { 0%,100%{transform:rotate(-22deg) scale(1)} 50%{transform:rotate(-14deg) scale(1.07) translateX(-22px)} }
-@keyframes crtr-wave2 { 0%,100%{transform:rotate(28deg) scale(1)} 50%{transform:rotate(21deg) scale(1.09) translateY(-16px)} }
-@keyframes crtr-wave3 { 0%,100%{transform:scale(1) rotate(4deg)} 50%{transform:scale(1.14) rotate(9deg) translateY(-10px)} }
+@keyframes crtr-pulse-bar { 0%{transform:scaleY(var(--initial-scale))} 100%{transform:scaleY(calc(var(--initial-scale) * 0.62))} }
 .crtr-marquee-track:hover { animation-play-state:paused; }
-@media(prefers-reduced-motion:reduce){.crtr-marquee-track,.crtr-blob{animation:none!important}}
+@media(prefers-reduced-motion:reduce){.crtr-marquee-track,.crtr-bar{animation:none!important}}
 </style>
 </head>
 <body>
@@ -435,15 +433,32 @@ function ContactModal({ open, onClose }) {
 
 /* ─── HOME SECTIONS ─── */
 
+function GradientBars({ numBars = 11, animDur = 2.5 }) {
+  const bars = Array.from({ length: numBars }, (_, i) => {
+    const pos = numBars > 1 ? i / (numBars - 1) : 0.5;
+    const d = Math.abs(pos - 0.5);
+    return (28 + 72 * Math.pow(d * 2, 1.2)) / 100;
+  });
+  return (
+    <div aria-hidden="true" style={{ position:'absolute', inset:0, overflow:'hidden', display:'flex', pointerEvents:'none' }}>
+      {bars.map((scale, i) => (
+        <div key={i} className="crtr-bar" style={{
+          flex:`1 0 calc(100% / ${numBars})`, maxWidth:`calc(100% / ${numBars})`,
+          height:'100%',
+          background:'linear-gradient(to top, rgba(229,35,44,.88) 0%, rgba(229,35,44,.28) 52%, transparent 100%)',
+          transform:`scaleY(${scale})`, transformOrigin:'bottom',
+          animation:`crtr-pulse-bar ${animDur}s ease-in-out ${(i * 0.12).toFixed(2)}s infinite alternate`,
+          '--initial-scale': scale,
+        }}/>
+      ))}
+    </div>
+  );
+}
+
 function Hero({ onStart }) {
   return (
     <section style={{ borderBottom:'1.5px solid rgba(244,241,236,.12)', overflow:'hidden', position:'relative', background:'var(--ink)' }}>
-      {/* Light beam gradients */}
-      <div aria-hidden="true" style={{ position:'absolute', inset:0, overflow:'hidden', pointerEvents:'none' }}>
-        <div className="crtr-blob" style={{ position:'absolute', width:'165%', height:'130%', top:'-55%', left:'-55%', background:'radial-gradient(ellipse 36% 62% at 50% 50%, rgba(229,35,44,.58) 0%, rgba(229,35,44,.20) 38%, transparent 65%)', animation:'crtr-wave1 22s ease-in-out infinite', willChange:'transform' }}/>
-        <div className="crtr-blob" style={{ position:'absolute', width:'150%', height:'115%', bottom:'-48%', right:'-52%', background:'radial-gradient(ellipse 30% 58% at 50% 50%, rgba(176,8,14,.55) 0%, rgba(229,35,44,.18) 42%, transparent 68%)', animation:'crtr-wave2 28s ease-in-out infinite', willChange:'transform' }}/>
-        <div className="crtr-blob" style={{ position:'absolute', width:'50%', height:'48%', top:'22%', left:'22%', background:'radial-gradient(ellipse, rgba(229,35,44,.10) 0%, transparent 68%)', animation:'crtr-wave3 18s ease-in-out infinite', willChange:'transform' }}/>
-      </div>
+      <GradientBars numBars={11} animDur={2.5}/>
 
       {/* Eyebrow strip */}
       <div className="kit-wrap">
