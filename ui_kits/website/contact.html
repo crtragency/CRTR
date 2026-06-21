@@ -205,27 +205,18 @@ function Ticker() {
 
 function PageHero() {
   return (
-    <div>
-      <Ticker/>
-      <section style={{ background:'var(--ink)', borderBottom:'1.5px solid var(--ink)', padding:'48px 0 44px', position:'relative', overflow:'hidden' }}>
-        <div style={{ position:'absolute', inset:0, backgroundImage:'radial-gradient(circle at 80% 50%, rgba(229,35,44,.08) 0%, transparent 60%)', pointerEvents:'none' }}/>
-        <div className="kit-wrap hero-grid" style={{ position:'relative', display:'grid', gridTemplateColumns:'1fr 1fr', gap:'48px', alignItems:'center' }}>
-          <h1 style={{ fontFamily:'var(--font-display)', fontSize:'clamp(40px,6.5vw,88px)', lineHeight:.88, letterSpacing:'-0.045em', textTransform:'uppercase', color:'var(--paper)', margin:0 }}>
-            Let's make <Stroke ink={false}>the thing.</Stroke>
-          </h1>
-          <div style={{ display:'flex', flexDirection:'column', gap:18, alignItems:'flex-start' }}>
-            <Badge tone="red" dot>Q3 2026 — 2 of 6 Slots Open</Badge>
-            <p style={{ fontSize:17, color:'var(--muted-2)', lineHeight:1.65, maxWidth:400, margin:0 }}>
-              Tell us what you're building. We reply to every brief in under 24 hours — usually a lot less.
-            </p>
-            <div style={{ display:'flex', alignItems:'center', gap:8 }}>
-              <span style={{ width:6, height:6, borderRadius:'50%', background:'#22c55e', display:'inline-block', flexShrink:0 }}/>
-              <span style={{ fontFamily:'var(--font-mono)', fontSize:10, color:'var(--muted)', textTransform:'uppercase', letterSpacing:'.08em' }}>Currently accepting new projects</span>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+    <section style={{ background:'var(--paper)', borderBottom:'1.5px solid var(--ink)', padding:'80px 0 72px' }}>
+      <div className="kit-wrap">
+        <span className="kit-tag">Contact</span>
+        <h1 style={{ fontFamily:'var(--font-display)', fontSize:'clamp(56px,10vw,136px)', lineHeight:.88, letterSpacing:'-0.045em', textTransform:'uppercase', margin:'20px 0 0' }}>
+          <span style={{ display:'block', color:'var(--ink)' }}>Got a thing?</span>
+          <span style={{ display:'block', color:'var(--red)' }}>{"Let's make it."}</span>
+        </h1>
+        <p style={{ fontSize:17, color:'var(--muted)', lineHeight:1.65, maxWidth:520, marginTop:28 }}>
+          Tell us what you are working on. First reply in under a day — usually a lot less. No forms-to-nowhere; a real person reads every one.
+        </p>
+      </div>
+    </section>
   );
 }
 
@@ -236,34 +227,30 @@ const SERVICE_TYPES = [
   { key:'design',  label:'Design',       sub:'Identity · Packaging' },
   { key:'all',     label:'Everything',   sub:'All four crafts' },
 ];
-const BUDGET_OPTIONS = ['Under $5k', '$5–10k', '$10–25k', '$25–50k', '$50k+'];
+const BUDGET_OPTIONS = ['< $10K', '$10–25K', '$25–50K', '$50K+'];
 
 function TypePicker({ selected, onSelect }) {
   return (
-    <div style={{ marginBottom:52 }}>
-      <div style={{ fontFamily:'var(--font-mono)', fontSize:11, textTransform:'uppercase', letterSpacing:'.1em', color:'var(--red)', marginBottom:16 }}>/ 01 — What type of project? <span style={{ opacity:.5, textTransform:'none', letterSpacing:0 }}>(pick all that apply)</span></div>
-      <div className="type-grid">
-        {SERVICE_TYPES.map(({ key, label, sub }) => {
+    <div>
+      <label style={{ display:'block', fontFamily:'var(--font-mono)', fontSize:'var(--fs-2xs)', textTransform:'uppercase', letterSpacing:'var(--ls-eyebrow)', color:'var(--muted)', marginBottom:10 }}>What do you need?</label>
+      <div style={{ display:'flex', flexWrap:'wrap', gap:8 }}>
+        {SERVICE_TYPES.map(({ key, label }) => {
           const active = selected.includes(key);
           const [hov, setHov] = useState(false);
           return (
             <button key={key} onClick={() => onSelect(key)}
               onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
               style={{
-                background: active ? 'var(--red)' : hov ? 'var(--paper-2)' : 'var(--paper)',
+                fontFamily:'var(--font-mono)', fontSize:11, textTransform:'uppercase', letterSpacing:'.06em',
+                padding:'8px 16px',
+                border: `1.5px solid ${active ? 'var(--red)' : 'var(--ink)'}`,
+                borderRadius:'var(--r-pill)',
+                cursor:'pointer',
+                background: active ? 'var(--red)' : hov ? 'var(--paper-2)' : 'transparent',
                 color: active ? '#fff' : 'var(--ink)',
-                border: `var(--bw) solid ${active ? 'var(--red)' : 'var(--ink)'}`,
-                borderRadius: 'var(--r-md)',
-                padding: '20px 16px',
-                cursor: 'pointer',
-                textAlign: 'left',
-                transition: 'all var(--dur-base) var(--ease-ui)',
-                boxShadow: active ? 'var(--shadow-hard)' : 'none',
-                transform: active ? 'translate(-2px,-2px)' : 'none',
-              }}>
-              <div style={{ fontFamily:'var(--font-display)', fontSize:15, letterSpacing:'-0.01em', textTransform:'uppercase', marginBottom:5, lineHeight:1 }}>{label}</div>
-              <div style={{ fontFamily:'var(--font-mono)', fontSize:10, letterSpacing:'.05em', textTransform:'uppercase', opacity: active ? 0.85 : 0.55, lineHeight:1.3 }}>{sub}</div>
-            </button>
+                transition:'all var(--dur-fast) var(--ease-ui)',
+                fontWeight: 500,
+              }}>{label}</button>
           );
         })}
       </div>
@@ -274,7 +261,7 @@ function TypePicker({ selected, onSelect }) {
 function BudgetPicker({ selected, onSelect }) {
   return (
     <div>
-      <label style={{ display:'block', fontFamily:'var(--font-mono)', fontSize:'var(--fs-2xs)', textTransform:'uppercase', letterSpacing:'var(--ls-eyebrow)', color:'var(--muted)', marginBottom:10 }}>Budget range (optional)</label>
+      <label style={{ display:'block', fontFamily:'var(--font-mono)', fontSize:'var(--fs-2xs)', textTransform:'uppercase', letterSpacing:'var(--ls-eyebrow)', color:'var(--muted)', marginBottom:10 }}>Budget</label>
       <div style={{ display:'flex', flexWrap:'wrap', gap:8 }}>
         {BUDGET_OPTIONS.map(b => {
           const active = selected === b;
@@ -377,39 +364,26 @@ function ContactSection() {
             </div>
           </div>
         ) : (
-          <>
-            <TypePicker selected={types} onSelect={key => setTypes(prev => prev.includes(key) ? prev.filter(k=>k!==key) : [...prev, key])}/>
-            <div className="contact-2col">
-              {/* Form */}
-              <div>
-                <div style={{ fontFamily:'var(--font-mono)', fontSize:11, textTransform:'uppercase', letterSpacing:'.1em', color:'var(--red)', marginBottom:24 }}>/ 02 — Tell us about it</div>
-                <div className="form-row" style={{ marginBottom:16 }}>
-                  <Input label="Name" placeholder="Jane Maker"/>
-                  <Input label="Email" type="email" placeholder="you@studio.com"/>
-                </div>
-                <div style={{ marginBottom:16 }}>
-                  <Input label="Company / project" placeholder="Acme Inc."/>
-                </div>
-                <div style={{ marginBottom:24 }}>
-                  <Textarea label="What are you making?" rows={5} placeholder="Describe the project — scale, timeline, what success looks like for you."/>
-                </div>
-                <div style={{ marginBottom:36 }}>
-                  <BudgetPicker selected={budget} onSelect={setBudget}/>
-                </div>
-                <div style={{ display:'flex', alignItems:'center', gap:20, flexWrap:'wrap' }}>
-                  <Button variant="primary" size="lg" onClick={() => setSent(true)}>Send brief</Button>
-                  <div style={{ display:'flex', alignItems:'center', gap:8 }}>
-                    <span style={{ width:6, height:6, borderRadius:'50%', background:'#22c55e', display:'inline-block' }}/>
-                    <span style={{ fontFamily:'var(--font-mono)', fontSize:11, color:'var(--muted)', textTransform:'uppercase', letterSpacing:'.06em' }}>Reply in &lt; 24h</span>
-                  </div>
-                </div>
+          <div style={{ maxWidth:660, margin:'0 auto' }}>
+            <div style={{ background:'var(--paper)', border:'1.5px solid var(--ink)', borderRadius:'var(--r-xl)', padding:40, boxShadow:'6px 6px 0 var(--ink)' }}>
+              <div className="form-row" style={{ marginBottom:20 }}>
+                <Input label="Name" placeholder="Jane Maker"/>
+                <Input label="Email" type="email" placeholder="you@studio.com"/>
               </div>
-              {/* Sidebar */}
-              <div style={{ position:'sticky', top:96 }}>
-                <SidebarCard/>
+              <div style={{ marginBottom:20 }}>
+                <TypePicker selected={types} onSelect={key => setTypes(prev => prev.includes(key) ? prev.filter(k=>k!==key) : [...prev, key])}/>
+              </div>
+              <div style={{ marginBottom:20 }}>
+                <BudgetPicker selected={budget} onSelect={setBudget}/>
+              </div>
+              <div style={{ marginBottom:32 }}>
+                <Textarea label="Tell us about the project" rows={5} placeholder="A launch film, a new site, a full rebrand…"/>
+              </div>
+              <div style={{ display:'flex', justifyContent:'flex-end' }}>
+                <Button variant="primary" size="lg" onClick={() => setSent(true)}>Send brief</Button>
               </div>
             </div>
-          </>
+          </div>
         )}
       </div>
     </section>
