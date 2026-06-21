@@ -94,9 +94,9 @@ p { margin:0; color:var(--text-2); line-height:var(--lh-body); }
 @media(max-width:540px){.foot-grid{grid-template-columns:1fr}}
 
 @keyframes crtr-marq { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-@keyframes crtr-wave1 { 0%,100%{transform:translate(0,0) scale(1)} 25%{transform:translate(60px,-50px) scale(1.08)} 50%{transform:translate(-30px,45px) scale(0.94)} 75%{transform:translate(50px,22px) scale(1.05)} }
-@keyframes crtr-wave2 { 0%,100%{transform:translate(0,0) scale(1)} 30%{transform:translate(-65px,38px) scale(1.1)} 60%{transform:translate(42px,-52px) scale(0.91)} 80%{transform:translate(-22px,-18px) scale(1.04)} }
-@keyframes crtr-wave3 { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(32px,-34px) scale(1.07)} 66%{transform:translate(-42px,22px) scale(0.95)} }
+@keyframes crtr-wave1 { 0%,100%{transform:rotate(-22deg) scale(1)} 50%{transform:rotate(-14deg) scale(1.07) translateX(-22px)} }
+@keyframes crtr-wave2 { 0%,100%{transform:rotate(28deg) scale(1)} 50%{transform:rotate(21deg) scale(1.09) translateY(-16px)} }
+@keyframes crtr-wave3 { 0%,100%{transform:scale(1) rotate(4deg)} 50%{transform:scale(1.14) rotate(9deg) translateY(-10px)} }
 .crtr-marquee-track:hover { animation-play-state:paused; }
 @media(prefers-reduced-motion:reduce){.crtr-marquee-track,.crtr-blob{animation:none!important}}
 </style>
@@ -437,20 +437,22 @@ function ContactModal({ open, onClose }) {
 
 function Hero({ onStart }) {
   return (
-    <section style={{ borderBottom:'1.5px solid var(--ink)', overflow:'hidden', position:'relative' }}>
+    <section style={{ borderBottom:'1.5px solid rgba(244,241,236,.12)', overflow:'hidden', position:'relative', background:'var(--ink)' }}>
+      {/* Light beam gradients */}
       <div aria-hidden="true" style={{ position:'absolute', inset:0, overflow:'hidden', pointerEvents:'none' }}>
-        <div className="crtr-blob" style={{ position:'absolute', width:820, height:640, top:'-18%', right:'-14%', background:'radial-gradient(ellipse, rgba(229,35,44,.30) 0%, rgba(229,35,44,.10) 42%, transparent 70%)', borderRadius:'50%', animation:'crtr-wave1 22s ease-in-out infinite', willChange:'transform' }}/>
-        <div className="crtr-blob" style={{ position:'absolute', width:600, height:520, bottom:'-28%', left:'-10%', background:'radial-gradient(ellipse, rgba(176,8,14,.22) 0%, rgba(229,35,44,.08) 48%, transparent 72%)', borderRadius:'50%', animation:'crtr-wave2 28s ease-in-out infinite', willChange:'transform' }}/>
-        <div className="crtr-blob" style={{ position:'absolute', width:420, height:400, top:'20%', left:'32%', background:'radial-gradient(ellipse, rgba(229,35,44,.16) 0%, transparent 65%)', borderRadius:'50%', animation:'crtr-wave3 18s ease-in-out infinite', willChange:'transform' }}/>
+        <div className="crtr-blob" style={{ position:'absolute', width:'165%', height:'130%', top:'-55%', left:'-55%', background:'radial-gradient(ellipse 36% 62% at 50% 50%, rgba(229,35,44,.58) 0%, rgba(229,35,44,.20) 38%, transparent 65%)', animation:'crtr-wave1 22s ease-in-out infinite', willChange:'transform' }}/>
+        <div className="crtr-blob" style={{ position:'absolute', width:'150%', height:'115%', bottom:'-48%', right:'-52%', background:'radial-gradient(ellipse 30% 58% at 50% 50%, rgba(176,8,14,.55) 0%, rgba(229,35,44,.18) 42%, transparent 68%)', animation:'crtr-wave2 28s ease-in-out infinite', willChange:'transform' }}/>
+        <div className="crtr-blob" style={{ position:'absolute', width:'50%', height:'48%', top:'22%', left:'22%', background:'radial-gradient(ellipse, rgba(229,35,44,.10) 0%, transparent 68%)', animation:'crtr-wave3 18s ease-in-out infinite', willChange:'transform' }}/>
       </div>
+
       {/* Eyebrow strip */}
       <div className="kit-wrap">
-        <div className="hero-eyebrow">
-          <Badge tone="paper" dot>A creator-led agency · est. 2021</Badge>
-          <div style={{ display:'flex', gap:20, alignItems:'center', fontFamily:'var(--font-mono)', fontSize:10, textTransform:'uppercase', letterSpacing:'.08em', color:'var(--muted)' }}>
+        <div className="hero-eyebrow" style={{ borderBottomColor:'rgba(244,241,236,.1)' }}>
+          <Badge tone="ink" dot style={{ borderColor:'rgba(244,241,236,.2)', color:'var(--paper)' }}>A creator-led agency · est. 2021</Badge>
+          <div style={{ display:'flex', gap:20, alignItems:'center', fontFamily:'var(--font-mono)', fontSize:10, textTransform:'uppercase', letterSpacing:'.08em', color:'rgba(244,241,236,.4)' }}>
             <span>Lisbon · NYC · Remote</span>
-            <span style={{ width:1, height:12, background:'rgba(11,11,12,.18)', display:'inline-block' }}/>
-            <span style={{ display:'flex', alignItems:'center', gap:7, color:'var(--ink)', fontWeight:600 }}>
+            <span style={{ width:1, height:12, background:'rgba(244,241,236,.15)', display:'inline-block' }}/>
+            <span style={{ display:'flex', alignItems:'center', gap:7, color:'var(--paper)', fontWeight:600 }}>
               <span style={{ width:6, height:6, borderRadius:'50%', background:'#22c55e', display:'inline-block', boxShadow:'0 0 0 3px rgba(34,197,94,.2)' }}/>
               Q3 — 2 slots open
             </span>
@@ -462,55 +464,55 @@ function Hero({ onStart }) {
       <div className="kit-wrap">
         <div className="hero-headline">
           <h1 style={{ fontFamily:'var(--font-display)', fontSize:'clamp(48px,8vw,112px)', lineHeight:.88, letterSpacing:'-0.045em', textTransform:'uppercase', margin:0 }}>
-            <span style={{ display:'block', color:'var(--ink)' }}>We make</span>
+            <span style={{ display:'block', color:'var(--paper)' }}>We make</span>
             <span style={{ display:'block' }}>
               <span style={{ color:'var(--red)' }}>brands</span>
-              <span style={{ color:'var(--ink)' }}> that</span>
+              <span style={{ color:'var(--paper)' }}> that</span>
             </span>
-            <span style={{ display:'block', fontFamily:'var(--font-sans)', fontStyle:'italic', fontWeight:900, color:'var(--ink)' }}>refuse to sit</span>
-            <span style={{ display:'block' }}><Stroke>still.</Stroke></span>
+            <span style={{ display:'block', fontFamily:'var(--font-sans)', fontStyle:'italic', fontWeight:900, color:'var(--paper)' }}>refuse to sit</span>
+            <span style={{ display:'block' }}><Stroke ink={false}>still.</Stroke></span>
           </h1>
         </div>
 
         {/* Info bar */}
-        <div className="hero-info-bar">
+        <div className="hero-info-bar" style={{ borderTopColor:'rgba(244,241,236,.14)' }}>
           {/* Description + CTAs */}
           <div className="hero-info-col">
-            <p style={{ fontSize:19, lineHeight:1.55, color:'var(--ink-2)', fontWeight:500, maxWidth:420, marginBottom:32 }}>
+            <p style={{ fontSize:19, lineHeight:1.55, color:'rgba(244,241,236,.72)', fontWeight:500, maxWidth:420, marginBottom:32 }}>
               A four-person creative agency shipping bold video, motion, web and graphic work for ambitious teams. No decks — just the thing, made well, on time.
             </p>
             <div style={{ display:'flex', gap:12, flexWrap:'wrap' }}>
               <Button variant="primary" onClick={onStart}>Start a project</Button>
-              <Button variant="ghost" href="work.html">See our work</Button>
+              <Button variant="ghost" href="work.html" style={{ color:'var(--paper)', borderColor:'rgba(244,241,236,.35)' }}>See our work</Button>
             </div>
           </div>
 
           {/* Stats */}
-          <div className="hero-stat-col">
+          <div className="hero-stat-col" style={{ borderLeftColor:'rgba(244,241,236,.14)' }}>
             {[['120+','Projects shipped'],['38','Brands trust us'],['4.9★','Client rating']].map(([n,l]) => (
               <div key={l}>
                 <div style={{ fontFamily:'var(--font-display)', fontSize:'clamp(30px,3.2vw,46px)', lineHeight:.9, letterSpacing:'-0.03em', color:'var(--red)' }}>{n}</div>
-                <div style={{ fontFamily:'var(--font-mono)', fontSize:10, textTransform:'uppercase', letterSpacing:'.08em', color:'var(--muted)', marginTop:6 }}>{l}</div>
+                <div style={{ fontFamily:'var(--font-mono)', fontSize:10, textTransform:'uppercase', letterSpacing:'.08em', color:'rgba(244,241,236,.4)', marginTop:6 }}>{l}</div>
               </div>
             ))}
           </div>
 
           {/* Services list */}
-          <div className="hero-svc-col">
+          <div className="hero-svc-col" style={{ borderLeftColor:'rgba(244,241,236,.14)' }}>
             <div style={{ fontFamily:'var(--font-mono)', fontSize:10, textTransform:'uppercase', letterSpacing:'.1em', color:'var(--red)', marginBottom:20 }}>/ What we do</div>
             <div style={{ display:'flex', flexDirection:'column', gap:14 }}>
               {[['01','Video editing'],['02','Motion design'],['03','Web development'],['04','Graphic design']].map(([n,s]) => (
                 <div key={n} style={{ display:'flex', alignItems:'center', gap:12 }}>
-                  <span style={{ fontFamily:'var(--font-mono)', fontSize:10, color:'var(--muted)', flexShrink:0 }}>{n}</span>
-                  <span style={{ width:18, height:1, background:'rgba(11,11,12,.2)', display:'inline-block', flexShrink:0 }}/>
-                  <span style={{ fontSize:14, fontWeight:600, color:'var(--ink)' }}>{s}</span>
+                  <span style={{ fontFamily:'var(--font-mono)', fontSize:10, color:'rgba(244,241,236,.35)', flexShrink:0 }}>{n}</span>
+                  <span style={{ width:18, height:1, background:'rgba(244,241,236,.15)', display:'inline-block', flexShrink:0 }}/>
+                  <span style={{ fontSize:14, fontWeight:600, color:'var(--paper)' }}>{s}</span>
                 </div>
               ))}
             </div>
-            <div style={{ marginTop:28, paddingTop:24, borderTop:'1px solid rgba(11,11,12,.1)' }}>
-              <a href="mailto:hello@crtr.studio" style={{ display:'inline-flex', alignItems:'center', gap:8, fontFamily:'var(--font-mono)', fontSize:10, textTransform:'uppercase', letterSpacing:'.08em', color:'var(--muted)', textDecoration:'none', transition:'color var(--dur-fast) var(--ease-ui)' }}
+            <div style={{ marginTop:28, paddingTop:24, borderTop:'1px solid rgba(244,241,236,.1)' }}>
+              <a href="mailto:hello@crtr.studio" style={{ display:'inline-flex', alignItems:'center', gap:8, fontFamily:'var(--font-mono)', fontSize:10, textTransform:'uppercase', letterSpacing:'.08em', color:'rgba(244,241,236,.38)', textDecoration:'none', transition:'color var(--dur-fast) var(--ease-ui)' }}
                 onMouseEnter={e=>e.currentTarget.style.color='var(--red)'}
-                onMouseLeave={e=>e.currentTarget.style.color='var(--muted)'}>
+                onMouseLeave={e=>e.currentTarget.style.color='rgba(244,241,236,.38)'}>
                 hello@crtr.studio
                 <svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </a>
